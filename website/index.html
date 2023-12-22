@@ -10,20 +10,108 @@
 <body>
 
   <header>
-    <h1>Remora</h1>
+    <div id="header_box">
+      <div>
+        <img id="header_image" src="images/remora-white.png" alt="Logo">
+      </div>
+      <div>
+        <h1 id="title_text">Remora</h1>
+      </div>
+    </div>
   </header>
 
   <nav>
-    <a href="index.html">Travels</a>
-    <a href="#">Exchange Gears</a>
-    <a href="#">Profile</a>
-    <a href="login.html">Login</a>
+    <a id="section_nav"  class="menu_button" href="index.html">
+      <div id="nav_text">
+        Travels
+      </div>
+      
+      <div>
+        <img id="nav_image" src="images/icons8-car-50.png" alt="Icon">
+      </div>
+    </a>
+
+    <a id="section_nav" class="menu_button" href="trade_gears.html">
+      <div id="nav_text">
+        Trade Gears
+      </div>
+       
+      <div>
+        <img id="nav_image" src="images/gear-token-white.png" alt="Icon">
+      </div>
+    </a>
+
+    <a id="section_nav" class="menu_button" href="profile.html">
+      <div id="nav_text">
+        Profile
+      </div>
+       
+      <div>
+        <img id="nav_image" src="images/icons8-customer-32.png" alt="Icon">
+      </div>
+    </a>
+
+    <a id="section_nav" class="menu_button" href="login.html">
+      <div id="nav_text">
+        Login
+      </div>
+       
+      <div>
+        <img id="nav_image" src="images/icons8-login-50.png" alt="Icon">
+      </div>
+    </a>
   </nav>
 
-  <section>
-    <h2>Drive Together, Earn Forever</h2>
-    <p>Join Remora and share rides with others. Save money, reduce your carbon footprint, and earn rewards!</p>
-  </section>
+  <div id="search_bar_father">
+    <div id="search_bar">
+      <div>
+        <img id="search_image" src="images/icons8-search-26.png" alt="Icon">
+      </div>
+      <div>
+        <input type="text" placeholder="Departure">
+      </div>
+      <div>
+        <img id="right_arrow" src="images/icons8-double-right-64.png" alt="Icon">
+      </div>
+      <div>
+        <input type="text" placeholder="Destination">
+      </div>
+      <div>
+        <input id="date_box" type="date">
+      </div>
+    </div>
+  </div>
+
+  <div id="new_trip_post_father">
+    <div id="new_trip_post_son">
+      <p>Add new trip:</p>
+      <button id="new_trip_post_btn"><img src="images/icons8-plus-24.png" width="40" height="40" alt="Icon"></button>
+    </div>
+  </div>
+
+  <div id="trip_post_father">
+    <div id="trip_post_son">
+      <div id="trip_boxes"></div>
+      <div id="change_page">
+        <div id="previous_page">
+          <button id="previous_page_btn"><img id="previous_page_img" src="images/icons8-arrow-left-24.png" alt="Icon"></button>
+        </div>
+        <div id="next_page">
+          <button id="next_page_btn"><img id="next_page_img" src="images/icons8-arrow-right-24.png" alt="Icon"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div id="first_div_footer">
+      <h2>Drive Together, Earn Forever</h2>
+      <p>Join Remora and share rides with others.<br>Save money, reduce your carbon footprint, and earn rewards!</p>
+    </div>
+    <div>
+      <p id="second_column">&copy authors</p>
+    </div>
+  </footer>
 
 </body>
 </html>

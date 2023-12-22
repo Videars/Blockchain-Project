@@ -26,6 +26,7 @@ nav {
   justify-content: space-between;
   background-color: #012e40;
   padding: 10px 20px;
+  border-top: 2px solid rgba(204, 204, 204, 0.2);
 }
 
 nav a {
@@ -85,4 +86,44 @@ button:hover {
   color: #012e40;
   text-decoration: none;
   font-weight: 700;
+}
+
+#section_nav{
+  display: flex;
+}
+
+#nav_image{
+  padding-left: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+#nav_text{
+  padding-top: 5px;
+}
+
+#header_box{
+  padding-left: 45%;
+  display: flex;
+}
+
+#header_image{
+  width: 70px;
+  height: 70px;
+}
+
+#title_text{
+  padding-left: 10px;
+  padding-top: 20px;
+}
+
+.menu_button{
+  background-color: #012e40;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+.menu_button:hover, #temp_button:hover{
+  color: #F2762E;
 }

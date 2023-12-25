@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
-  background-color: #ffffff;
+  background-color: #f4f4f4;
   color: #333;
 }
 
@@ -187,17 +187,19 @@ footer{
   background-color: #fff;
   border: none;
   cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #next_page_btn{
   background-color: #fff;
   border: none;
   cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #previous_page_btn:hover, #next_page_btn:hover, #new_trip_post_btn:hover{
   border: 1px solid #f2762ead;
-  border-radius: 10px;
+  border-radius: 2px;
 }
 
 #new_trip_post_father{
@@ -218,4 +220,21 @@ footer{
   margin-left: 20px;
   border: none;
   cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#search_post_btn{
+  margin-left: 20px;
+  margin-top: 10px;
+  background-color: #012e40;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#search_post_btn:hover{
+  background-color: #F2762E;
 }

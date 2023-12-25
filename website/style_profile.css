@@ -1,0 +1,339 @@
+/* style.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+  
+header {
+    background-color: #012e40;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+}
+  
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #012e40;
+    padding: 10px 20px;
+    border-top: 2px solid rgba(204, 204, 204, 0.2);
+}
+  
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    margin-right: 20px;
+    font-size: 16px;
+}
+    
+#section_nav{
+    display: flex;
+}
+  
+#nav_image{
+    padding-left: 5px;
+    width: 30px;
+    height: 30px;
+}
+  
+#nav_text{
+    padding-top: 5px;
+}
+  
+#header_box{
+    padding-left: 45%;
+    display: flex;
+}
+  
+#header_image{
+    width: 70px;
+    height: 70px;
+}
+  
+#title_text{
+    padding-left: 10px;
+    padding-top: 20px;
+}
+  
+.menu_button:hover{
+    color: #F2762E;
+}
+
+footer{
+    display: flex;
+    width: 100%;
+    height: 150px;
+    color: #fff;
+    background-color: #012e40;
+}
+
+#first_div_footer{
+    margin-left: 10px;
+}
+
+#second_column{
+    margin-left: 200px;
+}
+
+#container_father_profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container_son_profile{
+    margin-top: 30px;
+    width: 90%;
+    margin-bottom: 30px;
+}
+
+#profile_header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#profile_image_container, #profile_data, #profile_gear_balance{
+    flex: 33%;
+    text-align: center;    
+}
+
+#profile_image_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#profile_image{
+    width: 100px;
+    height: 100px;
+    background-color: #f2762ead;
+    border-radius: 50%;
+}
+
+#profile_gear_update_btn{
+    margin-left: 20px;
+    margin-top: 10px;
+    background-color: #012e40;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+  
+#profile_gear_update_btn:hover{
+    background-color: #F2762E;
+}
+
+#notification_header{
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 310px;
+    margin-top: 5px;
+    position: relative;
+}
+
+#notification_header_text{
+    display: flex;
+    padding-top: 10px;
+    margin-left: 10px;
+}
+
+#notification_img{
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+#notification_header_body{
+    margin-top: 10px;
+    height: 220px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #cfcfcf;
+    border-radius: 10px;
+}
+
+#button_notification_section{
+    display: flex;
+    position: absolute;
+    right: 10px;
+    margin-top: 5px;
+}
+
+#previous_page_notification_btn{
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+  
+#next_page_notification_btn{
+    background-color: #fff;
+    margin-left: 5px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+  
+#previous_page_notification_btn:hover, #next_page_notification_btn:hover{
+    border: 1px solid #f2762ead;
+    border-radius: 2px;
+}
+
+#ongoing_trips_payment_header{
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 310px;
+    margin-top: 5px;
+    position:relative
+}
+
+#ongoing_trips_payment_header_text{
+    display: flex;
+    padding-top: 10px;
+    margin-left: 10px;
+}
+
+#ongoing_trips_img{
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+#ongoing_trips_header_body{
+    margin-top: 10px;
+    height: 220px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #cfcfcf;
+    border-radius: 10px;
+}
+
+#ongoing_trips_img_container{
+    margin-left: 3px;
+}
+
+#button_trips_section{
+    display: flex;
+    position: absolute;
+    right: 10px;
+    margin-top: 5px;
+}
+
+#previous_page_trips_btn{
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+  
+#next_page_trips_btn{
+    background-color: #fff;
+    margin-left: 5px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+  
+#previous_page_trips_btn:hover, #next_page_trips_btn:hover{
+    border: 1px solid #f2762ead;
+    border-radius: 2px;
+}
+
+#wallet_profile_header{
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 315px;
+    margin-top: 5px;
+}
+
+#wallet_profile_header_text{
+    display: flex;
+    padding-top: 10px;
+    margin-left: 10px;
+}
+
+#wallet_profile_img{
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+#wallet_profile_header_body{
+    margin-top: 10px;
+    height: 220px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #cfcfcf;
+    border-radius: 10px;
+}
+
+#wallet_profile_header_body{
+    margin-top: 10px;
+    height: 220px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #cfcfcf;
+    border-radius: 10px;
+}
+
+#wallet_profile_text{
+    margin-top: 5px;
+}
+
+#wallet_profile_img{
+    width: 30px;
+    height: 30px;
+}
+
+#add_wallet_btn_container{
+    margin-left: 10px;
+}
+
+#add_wallet_btn {
+    background-color: #012e40;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+  
+#add_wallet_btn:hover {
+    background-color: #F2762E;
+}
+
+#personal_info_stats_profile_header{
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 310px;
+    margin-top: 5px;
+}
+
+
+
+
+  

@@ -329,9 +329,72 @@ footer{
     background-color: #fff;
     border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 310px;
+    height: 185px;
     margin-top: 5px;
 }
+
+#personal_info_stats_profile_header_text{
+    display: flex;
+    padding-top: 10px;
+    margin-left: 10px;
+}
+
+#personal_info_stats_profile_img{
+    margin-top: -2px;
+    width: 20px;
+    height: 20px;
+}
+
+#personal_info_stats_profile_header_body{
+    margin-top: 10px;
+    height: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #cfcfcf;
+    border-radius: 10px;
+}
+
+#personal_info_stats_profile_img_container{
+    margin-left: 3px;
+}
+
+#button_personal_info_stats_profile_history_btn_section{
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+#personal_info_history_trips{
+    display: flex;
+}
+
+#personal_info_history_trips {
+    background-color: #fff;
+    margin-left: 5px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+  
+#personal_info_history_trips:hover {
+    border: 1px solid #f2762ead;
+    border-radius: 2px;
+}
+
+#personal_info_history_btn_text{
+    margin-top: 5px;
+}
+
+#personal_info_history_btn_img{
+    width: 20px;
+    height: 20px;
+}
+
+#personal_info_history_btn_img_container{
+    margin-top: 3px;
+    margin-left: 3px;
+}
+
+
 
 
 

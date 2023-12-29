@@ -1,0 +1,371 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #012e40;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #012e40;
+  padding: 10px 20px;
+  border-top: 2px solid rgba(204, 204, 204, 0.2);
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  margin-right: 20px;
+  font-size: 16px;
+}
+
+section {
+  padding: 40px;
+  text-align: center;
+}
+
+section h2 {
+  color: #012e40;
+  margin-bottom: 20px;
+  font-size: 36px;
+}
+
+section p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+#section_nav{
+  display: flex;
+}
+
+#nav_image{
+  padding-left: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+#nav_text{
+  padding-top: 5px;
+}
+
+#header_box{
+  padding-left: 45%;
+  display: flex;
+}
+
+#header_image{
+  width: 70px;
+  height: 70px;
+}
+
+#title_text{
+  padding-left: 10px;
+  padding-top: 20px;
+}
+
+.menu_button{
+  background-color: #012e40;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+.menu_button:hover{
+  color: #F2762E;
+}
+
+footer{
+  display: flex;
+  width: 100%;
+  height: 150px;
+  color: #fff;
+  background-color: #012e40;
+}
+
+#first_div_footer{
+  margin-left: 10px;
+}
+
+#second_column{
+  margin-left: 200px;
+}
+
+#search_bar_father{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#search_bar{
+  margin-top: 10px;
+  background-color: #cfcfcf;
+  align-items: center;
+  display: flex;
+  height: 37px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 10px;
+}
+
+#search_image{
+  margin-top: 4px;
+  height: 17px;
+  padding-right: 5px;
+}
+
+#right_arrow{
+  margin-top: 4px;
+  width: 20px;
+  height: 20px;
+}
+
+#date_box{
+  margin-left: 20px;
+}
+
+#trip_post_father{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+#trip_post_son{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  width: 80%;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+#trip_boxes{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+#change_page{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+#previous_page{
+  text-align: center;
+  flex: 50%;
+}
+
+#next_page{
+  text-align: center;
+  flex: 50%;
+}
+
+#previous_page_btn{
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#next_page_btn{
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#previous_page_btn:hover, #next_page_btn:hover, #new_trip_post_btn:hover{
+  border: 1px solid #f2762ead;
+  border-radius: 2px;
+}
+
+#new_trip_post_father{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#new_trip_post_son{
+  display: flex;
+  margin-top: 30px;
+}
+
+#new_trip_post_btn{
+  background-color: #fff;
+  margin-top: 4px;
+  margin-left: 20px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#search_post_btn{
+  margin-left: 20px;
+  margin-top: 10px;
+  background-color: #012e40;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#search_post_btn:hover{
+  background-color: #F2762E;
+}
+
+#card_0, #card_1, #card_2, #card_3, #card_4{
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 160px;
+  width: 95%;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+#card_0_header, #card_1_header, #card_2_header, #card_3_header, #card_4_header{
+  margin-top: 5px;
+  display: flex;
+  text-align: center;
+  width: 100%;
+}
+
+#card_0_departure, #card_1_departure, #card_2_departure, #card_3_departure, #card_4_departure{
+  margin-top: 5px;
+  text-align: center;
+  flex: 33%;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#card_0_arrow, #card_1_arrow, #card_2_arrow, #card_3_arrow, #card_4_arrow{
+  margin-top: 5px;
+  text-align: center;
+  flex: 33%;
+}
+
+#card_0_destination, #card_1_destination, #card_2_destination, #card_3_destination, #card_4_destination{
+  margin-top: 5px;
+  text-align: center;
+  flex: 33%;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#card_0_body, #card_1_body, #card_2_body, #card_3_body, #card_4_body{
+  margin-top: 20px;
+  display: flex;
+  text-align: center;
+  width: 100%;
+}
+
+#card_0_departure_date, #card_1_departure_date, #card_2_departure_date, #card_3_departure_date, #card_4_departure_date{
+  margin-top: 5px;
+  text-align: center;
+  flex: 50%;
+}
+
+#card_0_username, #card_1_username, #card_2_username, #card_3_username, #card_4_username{
+  margin-top: 5px;
+  text-align: center;
+  flex: 50%;
+}
+
+#card_0_footer, #card_1_footer, #card_2_footer, #card_3_footer, #card_4_footer{
+  margin-top: 15px;
+  display: flex;
+  text-align: center;
+  width: 100%;
+}
+
+#card_0_available_spots, #card_1_available_spots, #card_2_available_spots, #card_3_available_spots, #card_4_available_spots{
+  margin-top: 5px;
+  flex: 33%;
+}
+
+#card_0_booked_spots, #card_1_booked_spots, #card_2_booked_spots, #card_3_booked_spots, #card_4_booked_spots{
+  margin-top: 5px;
+  flex: 33%;
+}
+
+#card_0_gear_cost, #card_1_gear_cost, #card_2_gear_cost, #card_3_gear_cost, #card_4_gear_cost{
+  text-align: center;
+  flex: 33%;
+}
+
+#card_0_travel_id_section, #card_1_travel_id_section, #card_2_travel_id_section, #card_3_travel_id_section, #card_4_travel_id_section{
+  display: flex;
+  width: 100%;
+}
+
+#card_0_travel_id, #card_1_travel_id, #card_2_travel_id, #card_3_travel_id, #card_4_travel_id{
+ margin-left: 15px;
+ font-size: 11px;
+ color: #9a9a9a;
+}
+
+#card_0_book_btn, #card_1_book_btn, #card_2_book_btn, #card_3_book_btn, #card_4_book_btn{
+  background-color: #012e40;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+#card_0_book_btn:hover, #card_1_book_btn:hover, #card_2_book_btn:hover, #card_3_book_btn:hover, #card_4_book_btn:hover{
+  background-color: #F2762E;
+}
+
+#empty_box{
+  background-color: lightgray;
+  padding-top: 70px;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  font-size: 24px;
+  display: none;
+}
+
+#card_0_gear_cost_text, #card_1_gear_cost_text, #card_2_gear_cost_text, #card_3_gear_cost_text, #card_4_gear_cost_text{
+  margin-left: 5px;
+}
+
+#card_0_gear_logo, #card_1_gear_logo, #card_2_gear_logo, #card_3_gear_logo, #card_4_gear_logo{
+  margin-left: 5px;
+  margin-top: 3.5px;
+}

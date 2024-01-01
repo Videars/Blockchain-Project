@@ -120,22 +120,22 @@ footer{
     justify-content: center;
     margin-top: 30px;
     width: 80%;
-    height: 800px;
     border-radius: 10px;
     margin-bottom: 30px;
 }
   
 #sell_boxes{
-    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
-    background-color: black;
+    justify-content: center;
 }
   
 #change_page{
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 5%;
     width: 80%;
 }
   
@@ -187,4 +187,104 @@ footer{
     border: none;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#card_0, #card_1, #card_2, #card_3, #card_4{
+    margin-top: 10px;
+    display: flex;
+    height: 160px;
+    width: 95%;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+#card_0_principal, #card_1_principal, #card_2_principal, #card_3_principal, #card_4_principal{
+    width: 70%;
+}
+
+#card_0_button_box, #card_1_button_box, #card_2_button_box, #card_3_button_box, #card_4_button_box{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#card_0_btn, #card_1_btn, #card_2_btn, #card_3_btn, #card_4_btn{
+    background-color: #012e40;
+    color: #fff;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 4px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+  
+#card_0_btn:hover, #card_1_btn:hover, #card_2_btn:hover, #card_3_btn:hover, #card_4_btn:hover{
+    background-color: #F2762E;
+}
+
+#card_0_offer, #card_1_offer, #card_2_offer, #card_3_offer, #card_4_offer{
+    margin-top: 30px;
+    flex: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#card_0_footer, #card_1_footer, #card_2_footer, #card_3_footer, #card_4_footer{
+    margin-top: 20px;
+    flex: 100%;
+}
+
+#card_0_footer_seller, #card_1_footer_seller, #card_2_footer_seller, #card_3_footer_seller, #card_4_footer_seller{
+    margin-left: 60px;
+}
+
+#card_0_gears_offered, #card_0_eth_requested, #card_1_gears_offered, #card_1_eth_requested, #card_2_gears_offered, #card_2_eth_requested, #card_3_gears_offered, #card_3_eth_requested, #card_4_gears_offered, #card_4_eth_requested{
+    display: flex;
+    flex: 40%;
+    align-items: center;
+    justify-content: center;
+}
+
+#card_0_gears_offered_text, #card_0_eth_requested_text, #card_1_gears_offered_text, #card_1_eth_requested_text, #card_2_gears_offered_text, #card_2_eth_requested_text, #card_3_gears_offered_text, #card_3_eth_requested_text, #card_4_gears_offered_text, #card_4_eth_requested_text{
+    font-size: 24px;
+    text-align: center;
+}
+
+#card_0_right_arrow, #card_1_right_arrow, #card_2_right_arrow, #card_3_right_arrow, #card_4_right_arrow{
+    margin-top: 5px;
+    flex: 20%;
+    text-align: center;
+}
+
+#card_0_offer_id, #card_1_offer_id, #card_2_offer_id, #card_3_offer_id, #card_4_offer_id{
+    margin-top: 30px;
+    margin-left: 15px;
+    font-size: 11px;
+    color: #9a9a9a;
+}
+
+#card_0_cart_img, #card_1_cart_img, #card_2_cart_img, #card_3_cart_img, #card_4_cart_img{
+    margin-left: 5px;
+}
+
+#card_0_gear_img, #card_1_gear_img, #card_2_gear_img, #card_3_gear_img, #card_4_gear_img{
+    margin-left: 5px;
+}
+
+#empty_box{
+    background-color: lightgray;
+    padding-top: 70px;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    font-size: 24px;
+    display: none;
 }

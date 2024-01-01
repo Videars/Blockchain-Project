@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "**********";
+$password = "Pappagallo99!";
 $dbname = "remora_db";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -12,10 +12,48 @@ if ($conn->connect_error) {
 
 $perPage = 5;
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$mode = isset($_GET['mode']) ? (string)$_GET['mode'] : null;
+
+$departure = isset($_GET['departure']) ? (string)$_GET['departure'] : null;
+$destination = isset($_GET['destination']) ? (string)$_GET['destination'] : null;
+$date = isset($_GET['date']) ? (string)$_GET['date'] : null;
 
 $offset = ($page - 1) * $perPage;
 
-$sql = "SELECT * FROM trips ORDER BY departure_date LIMIT $offset, $perPage";
+if($mode === "DEFAULT_MODE"){
+    $sql = "SELECT * FROM trips ORDER BY departure_date LIMIT $offset, $perPage";
+}
+
+if($mode === "SEARCH_MODE"){
+    if($departure === "" && $destination === "" && $date === ""){
+        $sql = "SELECT * FROM trips ORDER BY departure_date LIMIT $offset, $perPage";
+    }
+
+    if($departure !== "" && $destination === "" && $date === ""){
+        $sql = "SELECT * FROM trips WHERE departure = '$departure' ORDER BY departure_date LIMIT $offset, $perPage";
+    }
+    if($departure === "" && $destination !== "" && $date === ""){
+        $sql = "SELECT * FROM trips WHERE destination = '$destination' ORDER BY departure_date LIMIT $offset, $perPage";
+    }
+    if($departure === "" && $destination === "" && $date !== ""){
+        $sql = "SELECT * FROM trips WHERE departure_date LIKE '$date%' ORDER BY departure_date LIMIT $offset, $perPage";
+    }
+
+    if($departure !== "" && $destination !== "" && $date === ""){
+        $sql = "SELECT * FROM trips WHERE departure = '$departure' AND destination = '$destination' ORDER BY departure_date LIMIT $offset, $perPage";
+    }
+    if($departure !== "" && $destination === "" && $date !== ""){
+        $sql = "SELECT * FROM trips WHERE departure = '$departure' AND departure_date LIKE '$date%' ORDER BY departure_date LIMIT $offset, $perPage";
+    }
+    if($departure === "" && $destination !== "" && $date !== ""){
+        $sql = "SELECT * FROM trips WHERE destination = '$destination' AND departure_date LIKE '$date%' ORDER BY departure_date LIMIT $offset, $perPage";
+    }
+
+    if($departure !== "" && $destination !== "" && $date !== ""){
+        $sql = "SELECT * FROM trips WHERE departure = '$departure' AND destination = '$destination' AND departure_date LIKE '$date%' ORDER BY departure_date LIMIT $offset, $perPage";
+    }
+}
+
 $result = $conn->query($sql);
 
 $resultArray = array();
@@ -35,7 +73,6 @@ while ($row = $result->fetch_assoc()) {
 
     $resultArray[] = $offer;
 }
-
 
 $conn->close();
 

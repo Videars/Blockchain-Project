@@ -164,15 +164,18 @@ function trip_publication(new_post_username_id, new_post_departure_id, new_post_
             
             var received_message = data.message;
 
-            alert("Messaggio dal server: " + received_message);
-            console.log("Messaggio dal server:", received_message);
+            alert("Message from the server: " + received_message);
+            console.log("Message from the server:", received_message);
 
             document.getElementById('invisible_div_unclickable').style.visibility = "hidden";
-
+            
+            document.getElementById('compilable_form_new_post').submit();
+            
         },
         error: function(error) {
             console.log('Errore durante la chiamata AJAX: ', error);
             alert("POST was not successful!");
+            document.getElementById('compilable_form_new_post').submit();
         }
     });
 };

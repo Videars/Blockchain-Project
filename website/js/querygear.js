@@ -1,6 +1,10 @@
 var currentPage = 1;
 var card_counter = 0;
 
+var new_sell_gears_username_id = "";
+var new_sell_gears_gears_offered_id = "";
+var new_sell_gears_ethereum_requested_id = "";
+
 document.addEventListener('DOMContentLoaded', function() {
     
     get_from_db(currentPage);
@@ -19,9 +23,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    document.getElementById('new_sell_post_btn').addEventListener('click', function(){
+        document.getElementById('invisible_div_unclickable').style.visibility = "visible";
+        document.getElementById('close_pop_up_btn').addEventListener('click', function(){
+            document.getElementById('invisible_div_unclickable').style.visibility = "hidden";
+        });
+        document.getElementById('new_sell_gears_confirm_button').addEventListener('click', function(){
+
+            if(validateForm()){
+                new_sell_gears_username_id = document.getElementById('new_sell_gears_username_input').value;
+                new_sell_gears_gears_offered_id = document.getElementById('new_sell_gears_trade_gears_input').value;
+                new_sell_gears_ethereum_requested_id = document.getElementById('new_sell_gears_trade_ethereum_input').value;
+                
+                sell_post_publication(new_sell_gears_username_id, new_sell_gears_gears_offered_id, new_sell_gears_ethereum_requested_id);
+                } else {
+                    alert("You have to compile all the new_offer fields!");
+                }
+        });
+    });
+
 });
 
-function get_from_db(currentPage, mode_general){
+function get_from_db(currentPage){
     console.log("PAGE: " + currentPage);
     $.ajax({
         url: '../php_scripts/script_get_gears.php',
@@ -74,3 +97,49 @@ function get_from_db(currentPage, mode_general){
         }
     });
 };
+
+function sell_post_publication(new_sell_gears_username_id, new_sell_gears_gears_offered_id, new_sell_gears_ethereum_requested_id){
+    console.log("new_sell_gears_username_id:", new_sell_gears_username_id);
+    console.log("new_sell_gears_gears_offered_id:", new_sell_gears_gears_offered_id);
+    console.log("new_sell_gears_ethereum_requested_id:", new_sell_gears_ethereum_requested_id);
+
+    $.ajax({
+        url: '../php_scripts/script_post_new_offer.php',
+        type: 'POST',
+        dataType: 'json',
+        data: { new_sell_username: new_sell_gears_username_id,
+                new_sell_gears_offered: new_sell_gears_gears_offered_id,
+                new_sell_ethereum_requested: new_sell_gears_ethereum_requested_id },
+        success: function(data) {
+            
+            var received_message = data.message;
+
+            alert("Message from the server: " + received_message);
+            console.log("Message from the server:", received_message);
+
+            document.getElementById('invisible_div_unclickable').style.visibility = "hidden";
+
+            document.getElementById('compilable_form_new_sell_gears').submit();
+            
+        },
+        error: function(error) {
+            console.log('Errore durante la chiamata AJAX: ', error);
+            alert("POST was not successful!");
+            document.getElementById('compilable_form_new_sell_gears').submit();
+        }
+    });
+};
+
+function validateForm(){
+    var form = document.getElementById('compilable_form_new_sell_gears');
+    var required_fields = form.querySelectorAll('[required]');
+
+    for(let i = 0; i < required_fields.length; i++){
+        if(!required_fields[i].value){
+            return false;
+        }
+    }
+
+    return true;
+
+}

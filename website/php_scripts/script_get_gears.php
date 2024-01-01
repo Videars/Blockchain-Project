@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "***********";
+$password = "Pappagallo99!";
 $dbname = "remora_db";
 
 $conn = new mysqli($servername, $username, $password, $dbname);

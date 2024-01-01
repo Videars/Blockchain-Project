@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
   <link rel="stylesheet" href="css/style_login.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="js/querylogin.js"></script>
   <title>Remora - Login</title>
 </head>
 <body>
@@ -62,14 +64,14 @@
     </a>
   </nav>
 
-  <form>
+  <form id="login_form">
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" required>
 
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required>
 
-    <button type="submit">Login</button>
+    <button id="login_btn" type="button">Login</button>
   </form>
 
   <div class="register-link">

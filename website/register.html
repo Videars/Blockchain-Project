@@ -43,7 +43,7 @@
       </div>
     </a>
 
-    <a id="section_nav" class="menu_button" href="profile.html">
+    <a id="section_nav" class="menu_button" href="login.html">
       <div id="nav_text">
         Profile
       </div>
@@ -73,15 +73,18 @@
 
     <label for="email">Email:</label>
     <input type="text" id="email" required>
+    <p id="error_message_email_register"></p>
 
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" required>
+    <p id="error_message_username_register"></p>
 
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required>
 
     <label for="check_password">Confirm Password:</label>
     <input type="password" id="check_password" name="check_password" required>
+    <p id="error_message_password_register"></p>
 
     <button id="register_btn" type="button">Register</button>
   </form>

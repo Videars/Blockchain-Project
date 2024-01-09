@@ -3,7 +3,7 @@ body {
   padding: 0;
   font-family: 'Montserrat', sans-serif;
   background-color: #f4f4f4;
-  color: #333;
+  color: #012e40;
 }
 
 header {
@@ -65,6 +65,22 @@ section p {
   padding-top: 5px;
 }
 
+#nav_text_login{
+  padding-top: 5px;
+}
+
+#section_nav_login{
+  display: flex;
+}
+
+#nav_text_profile{
+  padding-top: 5px;
+}
+
+#section_nav_profile{
+  display: flex;
+}
+
 #header_box{
   padding-left: 45%;
   display: flex;
@@ -101,10 +117,22 @@ footer{
 
 #first_div_footer{
   margin-left: 10px;
+  width: 50%;
 }
 
 #second_column{
-  margin-left: 200px;
+  width: 40%;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#footer_img{
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #search_bar_father{
@@ -236,7 +264,7 @@ footer{
 }
 
 #search_post_btn:hover{
-  background-color: #F2762E;
+  background-color: #f2762ee8;
 }
 
 #card_0, #card_1, #card_2, #card_3, #card_4{
@@ -249,8 +277,15 @@ footer{
   background-color: #ffffff;
   border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, scale 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   display: none;
 }
+
+#card_0:hover, #card_1:hover, #card_2:hover, #card_3:hover, #card_4:hover{
+  transform: translateX(10px) scale(1.02);
+  box-shadow: 0 0 3px 1px rgba(242, 118, 46, 0.3), 0 0 5px 2px rgba(242, 118, 46, 0.3), 0 0 7px 3px rgba(242, 118, 46, 0.3);
+}
+
 
 #card_0_header, #card_1_header, #card_2_header, #card_3_header, #card_4_header{
   margin-top: 5px;
@@ -328,7 +363,8 @@ footer{
 }
 
 #card_0_travel_id, #card_1_travel_id, #card_2_travel_id, #card_3_travel_id, #card_4_travel_id{
- margin-left: 15px;
+ margin-left: 13px;
+ margin-top: 3px;
  font-size: 11px;
  color: #9a9a9a;
 }
@@ -387,7 +423,7 @@ footer{
 #pop_up_new_post{
   background-color: #ffffff;
   width: 50%;
-  height: 370px;
+  height: 335px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -450,4 +486,9 @@ label{
   background-color: #F2762E;
 }
 
-
+#error_message_departure_date, #error_message_booking_deadline_date, #error_message_available_spots, #error_message_gear_cost{
+  color: red;
+  font-size: 10px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}

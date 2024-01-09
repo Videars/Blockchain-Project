@@ -3,7 +3,7 @@ body {
     padding: 0;
     font-family: 'Montserrat', sans-serif;
     background-color: #f4f4f4;
-    color: #333;
+    color: #012e40;
 }
   
 header {
@@ -64,6 +64,22 @@ section p {
 #nav_text{
     padding-top: 5px;
 }
+
+#nav_text_login{
+    padding-top: 5px;
+  }
+  
+#section_nav_login{
+    display: flex;
+}
+
+#nav_text_profile{
+    padding-top: 5px;
+  }
+  
+#section_nav_profile{
+    display: flex;
+}
   
 #header_box{
     padding-left: 45%;
@@ -101,10 +117,22 @@ footer{
   
 #first_div_footer{
     margin-left: 10px;
+    width: 50%;
 }
   
 #second_column{
-    margin-left: 200px;
+    width: 40%;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+#footer_img{
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
     
 #sell_post_father{
@@ -197,7 +225,13 @@ footer{
     background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, scale 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     display: none;
+}
+
+#card_0:hover, #card_1:hover, #card_2:hover, #card_3:hover, #card_4:hover{
+    transform: translateX(10px) scale(1.02);
+    box-shadow: 0 0 3px 1px rgba(242, 118, 46, 0.3), 0 0 5px 2px rgba(242, 118, 46, 0.3), 0 0 7px 3px rgba(242, 118, 46, 0.3);
 }
 
 #card_0_principal, #card_1_principal, #card_2_principal, #card_3_principal, #card_4_principal{
@@ -306,7 +340,7 @@ footer{
 #pop_up_new_sell_gears{
     background-color: #ffffff;
     width: 50%;
-    height: 200px;
+    height: 145px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
@@ -363,4 +397,11 @@ label{
   
 #new_sell_gears_confirm_button:hover{
     background-color: #F2762E;
+}
+
+#error_message_gears, #error_message_ethereum{
+    color: red;
+    font-size: 10px;
+    margin-top: 5px;
+    margin-bottom: 0px;
 }

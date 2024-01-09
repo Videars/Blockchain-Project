@@ -5,7 +5,7 @@ body {
   padding: 0;
   font-family: 'Montserrat', sans-serif;
   background-color: #f4f4f4;
-  color: #333;
+  color: #012e40;
 }
 
 header {
@@ -126,4 +126,10 @@ button:hover {
 
 .menu_button:hover, #temp_button:hover{
   color: #F2762E;
+}
+
+#error_message_username_login, #error_message_password_login, #error_message_username_register, #error_message_password_register, #error_message_email_register{
+  color: red;
+  font-size: 12px;
+  margin-top: -18px;
 }

@@ -43,8 +43,8 @@
       </div>
     </a>
 
-    <a id="section_nav" class="menu_button" href="profile.html">
-      <div id="nav_text">
+    <a id="section_nav_profile" class="menu_button" href="login.html">
+      <div id="nav_text_profile">
         Profile
       </div>
        
@@ -53,8 +53,8 @@
       </div>
     </a>
 
-    <a id="section_nav" class="menu_button" href="login.html">
-      <div id="nav_text">
+    <a id="section_nav_login" class="menu_button" href="login.html">
+      <div id="nav_text_login">
         Login
       </div>
        
@@ -100,10 +100,6 @@
         <img src="images/icons8-cross-100.png" width="15" height="15" alt="Icon">
       </button>
       <form id="compilable_form_new_post">
-        <div id="new_post_username">
-          <label for="new_post_username_input">Username:</label>
-          <input type="text" id="new_post_username_input" required>
-        </div>
         <div id="new_post_location">
           <div id="new_post_location_departure">
             <label for="new_post_location_departure_input">Departure:</label>
@@ -118,19 +114,23 @@
           <div id="new_post_date_departure">
             <label for="new_post_date_departure_input">Departure Date and Time:</label>
             <input type="datetime-local" id="new_post_date_departure_input" required>
+            <p id="error_message_departure_date"></p>
           </div>
           <div id="new_post_booking_deadline">
             <label for="new_post_booking_deadline_input">Booking Deadline Date and Time:</label>
             <input type="datetime-local" id="new_post_booking_deadline_input" required>
+            <p id="error_message_booking_deadline_date"></p>
           </div>
         </div>
         <div id="new_post_available_spots">
           <label for="new_post_available_spots_input">Available Spots:</label>
-          <input type="number" step="1" id="new_post_available_spots_input" required>
+          <input type="number" step="1" min="0" id="new_post_available_spots_input" required>
+          <p id="error_message_available_spots"></p>
         </div>
         <div id="new_post_gear_cost">
           <label for="new_post_gear_cost_input">Gear Cost:</label>
-          <input type="number" step="1" id="new_post_gear_cost_input" required>
+          <input type="number" step="1" min="0" id="new_post_gear_cost_input" required>
+          <p id="error_message_gear_cost"></p>
         </div>
         <button id="new_post_confirm_button" type="button">
           Confirm
@@ -166,7 +166,7 @@
             <div id="card_0_booked_spots">
             </div>
             <div id="card_0_gear_cost">
-              <button id="card_0_book_btn">
+              <button id="card_0_book_btn" onclick="check_to_book_trips(event)">
                 <div>Book for  </div>  
                 <div id="card_0_gear_cost_text">
 
@@ -206,7 +206,7 @@
             <div id="card_1_booked_spots">
             </div>
             <div id="card_1_gear_cost">
-              <button id="card_1_book_btn">
+              <button id="card_1_book_btn" onclick="check_to_book_trips(event)">
                 <div>Book for  </div>  
                 <div id="card_1_gear_cost_text">
 
@@ -246,7 +246,7 @@
             <div id="card_2_booked_spots">
             </div>
             <div id="card_2_gear_cost">
-              <button id="card_2_book_btn">
+              <button id="card_2_book_btn" onclick="check_to_book_trips(event)">
                 <div>Book for  </div>  
                 <div id="card_2_gear_cost_text">
 
@@ -286,7 +286,7 @@
             <div id="card_3_booked_spots">
             </div>
             <div id="card_3_gear_cost">
-              <button id="card_3_book_btn">
+              <button id="card_3_book_btn" onclick="check_to_book_trips(event)">
                 <div>Book for  </div>  
                 <div id="card_3_gear_cost_text">
 
@@ -326,7 +326,7 @@
             <div id="card_4_booked_spots">
             </div>
             <div id="card_4_gear_cost">
-              <button id="card_4_book_btn">
+              <button id="card_4_book_btn" onclick="check_to_book_trips(event)">
                 <div>Book for  </div>  
                 <div id="card_4_gear_cost_text">
 
@@ -361,8 +361,11 @@
       <h2>Drive Together, Earn Forever</h2>
       <p>Join Remora and share rides with others.<br>Save money, reduce your carbon footprint, and earn rewards!</p>
     </div>
-    <div>
-      <p id="second_column">&copy authors</p>
+    <div id="second_column">
+      <p>&copy Leonardo Cataldi<br>&copy Alessandro Calandrelli<br>&copy Francesco Goberti<br>&copy Martino Porceddu<br>&copy Matteo Vicari</p>
+    </div>
+    <div id="footer_img">
+      <img width="100" height="100" src="images/remora-white.png" alt="#">
     </div>
   </footer>
 

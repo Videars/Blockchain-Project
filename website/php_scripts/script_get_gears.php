@@ -1,10 +1,7 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "Pappagallo99!";
-$dbname = "remora_db";
+include 'config.php';
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername_db, $username_db, $password_db, $dbname);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);

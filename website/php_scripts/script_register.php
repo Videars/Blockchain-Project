@@ -1,10 +1,7 @@
 <?php
-$servername = "localhost";
-$username_db = "root";
-$password_db = "Pappagallo99!";
-$dbname = "remora_db";
+include 'config.php';
 
-$conn = new mysqli($servername, $username_db, $password_db, $dbname);
+$conn = new mysqli($servername_db, $username_db, $password_db, $dbname);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -17,7 +14,7 @@ $username_id = isset($_POST['username']) ? (string)$_POST['username'] : null;
 $password_id = isset($_POST['password']) ? (string)$_POST['password'] : null;
 
 
-$sql = "INSERT INTO remora_db.users (username, email, name, surname, balance, travel_stats, password) VALUES ('$username_id', '$email_id', '$name_id', '$surname_id', '0', '0', '$password_id');";
+$sql = "INSERT INTO remora_db.users (username, email, name, surname, balance, travel_stats, trips_given, trips_received, minted_gears, password) VALUES ('$username_id', '$email_id', '$name_id', '$surname_id', '0', '0', '0', '0', '0', '$password_id');";
 
 $result = $conn->query($sql);
 

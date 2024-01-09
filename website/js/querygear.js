@@ -1,12 +1,24 @@
 var currentPage = 1;
 var card_counter = 0;
 
-var new_sell_gears_username_id = "";
 var new_sell_gears_gears_offered_id = "";
 var new_sell_gears_ethereum_requested_id = "";
 
 document.addEventListener('DOMContentLoaded', function() {
     
+    check_session(function (isSessionValid) {
+        if (isSessionValid) {
+            document.getElementById('nav_text_login').innerHTML = "Logout";
+            document.getElementById('section_nav_login').href = "#";
+            document.getElementById('section_nav_profile').href = "../profile.html";
+            document.getElementById('section_nav_login').addEventListener('click', function(event) {
+                logout_function();
+            });            
+        } else {
+            console.log("La sessione non è valida.");
+        }
+    });
+
     get_from_db(currentPage);
 
     document.getElementById('next_page_btn').addEventListener('click', function(){
@@ -24,25 +36,53 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.getElementById('new_sell_post_btn').addEventListener('click', function(){
-        document.getElementById('invisible_div_unclickable').style.visibility = "visible";
-        document.getElementById('close_pop_up_btn').addEventListener('click', function(){
-            document.getElementById('invisible_div_unclickable').style.visibility = "hidden";
-        });
-        document.getElementById('new_sell_gears_confirm_button').addEventListener('click', function(){
-
-            if(validateForm()){
-                new_sell_gears_username_id = document.getElementById('new_sell_gears_username_input').value;
-                new_sell_gears_gears_offered_id = document.getElementById('new_sell_gears_trade_gears_input').value;
-                new_sell_gears_ethereum_requested_id = document.getElementById('new_sell_gears_trade_ethereum_input').value;
-                
-                sell_post_publication(new_sell_gears_username_id, new_sell_gears_gears_offered_id, new_sell_gears_ethereum_requested_id);
-                } else {
-                    alert("You have to compile all the new_offer fields!");
-                }
+        check_session(function (isSessionValid) {
+            if (isSessionValid) {
+                document.getElementById('invisible_div_unclickable').style.visibility = "visible";
+                document.getElementById('close_pop_up_btn').addEventListener('click', function(){
+                    document.getElementById('invisible_div_unclickable').style.visibility = "hidden";
+                });
+                document.getElementById('new_sell_gears_confirm_button').addEventListener('click', function(){
+                    
+                    if(validateForm()){
+                        new_sell_gears_gears_offered_id = document.getElementById('new_sell_gears_trade_gears_input').value;
+                        new_sell_gears_ethereum_requested_id = document.getElementById('new_sell_gears_trade_ethereum_input').value;
+                        
+                        if(check_input_values(new_sell_gears_gears_offered_id, new_sell_gears_ethereum_requested_id) == 1){
+                            sell_post_publication(new_sell_gears_gears_offered_id, new_sell_gears_ethereum_requested_id);
+                        }
+                    } else {
+                        alert("You have to compile all the new_offer fields!");
+                    }
+                });
+            } else {
+                console.log("La sessione non è valida.");
+                alert("You have to LOGIN in order to post a new OFFER!");
+            }
         });
     });
-
 });
+
+function check_input_values(new_sell_gears_gears_offered_id, new_sell_gears_ethereum_requested_id){
+    var gears = Number(new_sell_gears_gears_offered_id);
+    var ethereum = Number(new_sell_gears_ethereum_requested_id);
+
+    if(gears == Math.floor(gears) && gears >= 1){
+        if(ethereum >= 0.0001){
+            return 1;
+        } else {
+            document.getElementById('error_message_gears').innerHTML = "";
+            document.getElementById('error_message_ethereum').innerHTML = "";
+            document.getElementById('error_message_ethereum').innerHTML = "The value must be greater than 0.0001!";
+            return 0;
+        }
+    } else {
+        document.getElementById('error_message_ethereum').innerHTML = "";
+        document.getElementById('error_message_gears').innerHTML = "";
+        document.getElementById('error_message_gears').innerHTML = "The value must be an Integer<br>equal or greater than 1!";
+        return 0;
+    }
+};
 
 function get_from_db(currentPage){
     console.log("PAGE: " + currentPage);
@@ -98,8 +138,7 @@ function get_from_db(currentPage){
     });
 };
 
-function sell_post_publication(new_sell_gears_username_id, new_sell_gears_gears_offered_id, new_sell_gears_ethereum_requested_id){
-    console.log("new_sell_gears_username_id:", new_sell_gears_username_id);
+function sell_post_publication(new_sell_gears_gears_offered_id, new_sell_gears_ethereum_requested_id){
     console.log("new_sell_gears_gears_offered_id:", new_sell_gears_gears_offered_id);
     console.log("new_sell_gears_ethereum_requested_id:", new_sell_gears_ethereum_requested_id);
 
@@ -107,8 +146,7 @@ function sell_post_publication(new_sell_gears_username_id, new_sell_gears_gears_
         url: '../php_scripts/script_post_new_offer.php',
         type: 'POST',
         dataType: 'json',
-        data: { new_sell_username: new_sell_gears_username_id,
-                new_sell_gears_offered: new_sell_gears_gears_offered_id,
+        data: { new_sell_gears_offered: new_sell_gears_gears_offered_id,
                 new_sell_ethereum_requested: new_sell_gears_ethereum_requested_id },
         success: function(data) {
             
@@ -126,6 +164,66 @@ function sell_post_publication(new_sell_gears_username_id, new_sell_gears_gears_
             console.log('Errore durante la chiamata AJAX: ', error);
             alert("POST was not successful!");
             document.getElementById('compilable_form_new_sell_gears').submit();
+        }
+    });
+};
+
+function check_to_buy_an_offer(){
+    check_session(function (isSessionValid) {
+        if (isSessionValid) {
+            console.log("BUY ENABLED!");
+        } else {
+            console.log("La sessione non è valida.");
+            alert("You have to LOGIN in order to BUY something!");
+        }
+    });   
+};
+
+function check_session(callback){
+    $.ajax({
+        url: '../php_scripts/script_check_session.php',
+        type: 'POST',
+        dataType: 'json',
+        data: { },
+        success: function(data) {
+            
+            var received_message = data.message;
+
+            if(received_message === "You are not logged in :("){
+                console.log(received_message);
+                callback(false);
+            } else {
+                console.log("Welcome ", received_message);
+                callback(true);
+            }
+            
+        },
+        error: function(error) {
+            console.log('Errore durante la chiamata AJAX: ', error);
+            callback(false);
+        }
+    });
+};
+
+function logout_function(){
+    $.ajax({
+        url: '../php_scripts/script_logout.php',
+        type: 'POST',
+        dataType: 'json',
+        data: { },
+        success: function(data) {
+            
+            var received_message = data.message;
+
+            if(received_message === "You have logged out successfully"){
+                console.log(received_message);
+                alert("Message from the server: " + received_message);
+                window.location.href = "../index.html";
+            }
+            
+        },
+        error: function(error) {
+            console.log('Errore durante la chiamata AJAX: ', error);
         }
     });
 };

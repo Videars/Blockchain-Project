@@ -16,11 +16,19 @@ document.addEventListener('DOMContentLoaded', function() {
             password_id = document.getElementById('password').value;
             check_password_id = document.getElementById('check_password').value;
 
-            if(password_id === check_password_id){
-                register_user(name_id, surname_id, email_id, username_id, password_id);
+            document.getElementById('error_message_username_register').innerHTML = '';
+            document.getElementById('error_message_password_register').innerHTML = '';
+            document.getElementById('error_message_email_register').innerHTML = ''
+
+            if(isValidEmail(email_id) == 1){
+                if(password_id === check_password_id){
+                    register_user(name_id, surname_id, email_id, username_id, password_id);
                 } else {
-                    alert("Passwords do not match!");
+                    document.getElementById('error_message_password_register').innerHTML = 'Passwords do not match!';
                 }
+            } else {
+                document.getElementById('error_message_email_register').innerHTML = 'The email is invalid';
+            }
 
         } else {
             alert("You have to compile all the fields!");
@@ -57,8 +65,7 @@ function register_user(name_id, surname_id, email_id, username_id, password_id){
         },
         error: function(error) {
             console.log('Errore durante la chiamata AJAX: ', error);
-            alert("REGISTER was not successful!");
-            document.getElementById('register_form').submit();
+            document.getElementById('error_message_username_register').innerHTML = 'This username already exists';
         }
     });
 };
@@ -75,4 +82,10 @@ function validateForm(){
 
     return true;
 
+}
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    return emailRegex.test(email) ? 1 : 0;
 }

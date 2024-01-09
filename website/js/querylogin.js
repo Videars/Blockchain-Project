@@ -31,19 +31,23 @@ function login_user(username_id, password_id){
             
             var received_message = data.message;
 
-            alert("Message from the server: " + received_message);
             console.log("Message from the server:", received_message);
             
             if(received_message === "Login Successful"){
+                alert("Message from the server: " + received_message);
                 window.location.href = "../index.html";
             }
             
             if(received_message === "Wrong Password!"){
-                window.location.href = "../login.html";
+                document.getElementById('error_message_username_login').innerHTML = "";
+                document.getElementById('error_message_password_login').innerHTML = received_message;
+                //window.location.href = "../login.html";
             }
             
             if(received_message === "User not found :("){
-                window.location.href = "../login.html";
+                document.getElementById('error_message_password_login').innerHTML = "";
+                document.getElementById('error_message_username_login').innerHTML = received_message;
+                //window.location.href = "../login.html";
             }
         },
         error: function(error) {

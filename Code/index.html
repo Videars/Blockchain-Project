@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/style_travels_index.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="js/querypost.js"></script>
+  <title>Remora - Drive Together, Earn Forever</title>
+</head>
+
+<body>
+
+  <div id="bck_img"></div>
+
+  <header>
+    <div id="header_box">
+      <div>
+        <img id="header_image" src="images/remora-white.png" alt="Logo">
+      </div>
+      <div>
+        <h1 id="title_text">Remora</h1>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a id="section_nav"  class="menu_button" href="index.html">
+      <div id="nav_text">
+        Travels
+      </div>
+      
+      <div>
+        <img id="nav_image" src="images/icons8-car-50.png" alt="Icon">
+      </div>
+    </a>
+
+    <a id="section_nav" class="menu_button" href="trade_gears.html">
+      <div id="nav_text">
+        Trade Gears
+      </div>
+       
+      <div>
+        <img id="nav_image" src="images/gear-token-white.png" alt="Icon">
+      </div>
+    </a>
+
+    <a id="section_nav_profile" class="menu_button" href="login.html">
+      <div id="nav_text_profile">
+        Profile
+      </div>
+       
+      <div>
+        <img id="nav_image" src="images/icons8-customer-32.png" alt="Icon">
+      </div>
+    </a>
+
+    <a id="section_nav_login" class="menu_button" href="login.html">
+      <div id="nav_text_login">
+        Login
+      </div>
+       
+      <div>
+        <img id="nav_image" src="images/icons8-login-50.png" alt="Icon">
+      </div>
+    </a>
+  </nav>
+
+  <div id="search_bar_father">
+    <div id="search_bar">
+      <div>
+        <img id="search_image" src="images/icons8-search-26.png" alt="Icon">
+      </div>
+      <div>
+        <input id="departure_search" type="text" placeholder="Departure">
+      </div>
+      <div>
+        <img id="right_arrow" src="images/icons8-double-right-64.png" alt="Icon">
+      </div>
+      <div>
+        <input id="destination_search" type="text" placeholder="Destination">
+      </div>
+      <div>
+        <input id="date_box" type="date">
+      </div>
+    </div>
+    <button id="search_post_btn">
+      search
+    </button>
+  </div>
+
+  <div id="new_trip_post_father">
+    <div id="new_trip_post_son">
+      <p id="add_trip_text">Add new trip:</p>
+      <button id="new_trip_post_btn"><img src="images/icons8-plus-24.png" width="40" height="40" alt="Icon"></button>
+    </div>
+  </div>
+
+  <div id="invisible_div_unclickable">
+    <div id="pop_up_new_post">
+      <button id="close_pop_up_btn">
+        <img src="images/icons8-cross-100.png" width="15" height="15" alt="Icon">
+      </button>
+      <form id="compilable_form_new_post">
+        <div id="new_post_location">
+          <div id="new_post_location_departure">
+            <label for="new_post_location_departure_input">Departure:</label>
+            <input type="text" id="new_post_location_departure_input" required>
+          </div>
+          <div id="new_post_location_destination">
+            <label for="new_post_location_destination_input">Destination:</label>
+            <input type="text" id="new_post_location_destination_input" required>
+          </div>
+        </div>
+        <div id="new_post_date">
+          <div id="new_post_date_departure">
+            <label for="new_post_date_departure_input">Departure Date and Time:</label>
+            <input type="datetime-local" id="new_post_date_departure_input" required>
+            <p id="error_message_departure_date"></p>
+          </div>
+          <div id="new_post_booking_deadline">
+            <label for="new_post_booking_deadline_input">Booking Deadline Date and Time:</label>
+            <input type="datetime-local" id="new_post_booking_deadline_input" required>
+            <p id="error_message_booking_deadline_date"></p>
+          </div>
+        </div>
+        <div id="new_post_available_spots">
+          <label for="new_post_available_spots_input">Available Spots:</label>
+          <input type="number" step="1" min="0" id="new_post_available_spots_input" required>
+          <p id="error_message_available_spots"></p>
+        </div>
+        <div id="new_post_gear_cost">
+          <label for="new_post_gear_cost_input">Gear Cost:</label>
+          <input type="number" step="1" min="0" id="new_post_gear_cost_input" required>
+          <p id="error_message_gear_cost"></p>
+        </div>
+        <button id="new_post_confirm_button" type="button">
+          Confirm
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div id="trip_post_father">
+    <div id="trip_post_son">
+      <div id="trip_boxes">
+        <div id="card_0">
+          <div id="card_0_header">
+            <div id="card_0_departure">
+              
+            </div>
+            <div id="card_0_arrow">
+              <img id="card_0_right_arrow" src="images/icons8-arrow-right-24.png" width="30" height="30" alt="Icon">
+            </div>
+            <div id="card_0_destination">
+              
+            </div>
+          </div>
+          <div id="card_0_body">
+            <div id="card_0_departure_date">
+            </div>
+            <div id="card_0_username">
+            </div>
+          </div>
+          <div id="card_0_footer">
+            <div id="card_0_available_spots">
+            </div>
+            <div id="card_0_booked_spots">
+            </div>
+            <div id="card_0_gear_cost">
+              <button id="card_0_book_btn" onclick="check_to_book_trips(event)">
+                <div>Book for  </div>  
+                <div id="card_0_gear_cost_text">
+
+                </div>
+                <div id="card_0_gear_logo">
+                  <img id="card_0_gear_logo_img" src="images/gear-token-white.png" width="20" height="20" alt="Icon">
+                </div>
+              </button>
+            </div>
+          </div>
+          <div id="card_0_travel_id_section">
+            <div id="card_0_travel_id">
+            </div>
+          </div>
+        </div>
+        <div id="card_1">
+          <div id="card_1_header">
+            <div id="card_1_departure">
+              
+            </div>
+            <div id="card_1_arrow">
+              <img id="card_1_right_arrow" src="images/icons8-arrow-right-24.png" width="30" height="30" alt="Icon">
+            </div>
+            <div id="card_1_destination">
+              
+            </div>
+          </div>
+          <div id="card_1_body">
+            <div id="card_1_departure_date">
+            </div>
+            <div id="card_1_username">
+            </div>
+          </div>
+          <div id="card_1_footer">
+            <div id="card_1_available_spots">
+            </div>
+            <div id="card_1_booked_spots">
+            </div>
+            <div id="card_1_gear_cost">
+              <button id="card_1_book_btn" onclick="check_to_book_trips(event)">
+                <div>Book for  </div>  
+                <div id="card_1_gear_cost_text">
+
+                </div>
+                <div id="card_1_gear_logo">
+                  <img id="card_1_gear_logo_img" src="images/gear-token-white.png" width="20" height="20" alt="Icon">
+                </div>
+              </button>
+            </div>
+          </div>
+          <div id="card_1_travel_id_section">
+            <div id="card_1_travel_id">
+            </div>
+          </div>
+        </div>
+        <div id="card_2">
+          <div id="card_2_header">
+            <div id="card_2_departure">
+              
+            </div>
+            <div id="card_2_arrow">
+              <img id="card_2_right_arrow" src="images/icons8-arrow-right-24.png" width="30" height="30" alt="Icon">
+            </div>
+            <div id="card_2_destination">
+              
+            </div>
+          </div>
+          <div id="card_2_body">
+            <div id="card_2_departure_date">
+            </div>
+            <div id="card_2_username">
+            </div>
+          </div>
+          <div id="card_2_footer">
+            <div id="card_2_available_spots">
+            </div>
+            <div id="card_2_booked_spots">
+            </div>
+            <div id="card_2_gear_cost">
+              <button id="card_2_book_btn" onclick="check_to_book_trips(event)">
+                <div>Book for  </div>  
+                <div id="card_2_gear_cost_text">
+
+                </div>
+                <div id="card_2_gear_logo">
+                  <img id="card_2_gear_logo_img" src="images/gear-token-white.png" width="20" height="20" alt="Icon">
+                </div>
+              </button>
+            </div>
+          </div>
+          <div id="card_2_travel_id_section">
+            <div id="card_2_travel_id">
+            </div>
+          </div>
+        </div>
+        <div id="card_3">
+          <div id="card_3_header">
+            <div id="card_3_departure">
+              
+            </div>
+            <div id="card_3_arrow">
+              <img id="card_3_right_arrow" src="images/icons8-arrow-right-24.png" width="30" height="30" alt="Icon">
+            </div>
+            <div id="card_3_destination">
+              
+            </div>
+          </div>
+          <div id="card_3_body">
+            <div id="card_3_departure_date">
+            </div>
+            <div id="card_3_username">
+            </div>
+          </div>
+          <div id="card_3_footer">
+            <div id="card_3_available_spots">
+            </div>
+            <div id="card_3_booked_spots">
+            </div>
+            <div id="card_3_gear_cost">
+              <button id="card_3_book_btn" onclick="check_to_book_trips(event)">
+                <div>Book for  </div>  
+                <div id="card_3_gear_cost_text">
+
+                </div>
+                <div id="card_3_gear_logo">
+                  <img id="card_3_gear_logo_img" src="images/gear-token-white.png" width="20" height="20" alt="Icon">
+                </div>
+              </button>
+            </div>
+          </div>
+          <div id="card_3_travel_id_section">
+            <div id="card_3_travel_id">
+            </div>
+          </div>
+        </div>
+        <div id="card_4">
+          <div id="card_4_header">
+            <div id="card_4_departure">
+              
+            </div>
+            <div id="card_4_arrow">
+              <img id="card_4_right_arrow" src="images/icons8-arrow-right-24.png" width="30" height="30" alt="Icon">
+            </div>
+            <div id="card_4_destination">
+              
+            </div>
+          </div>
+          <div id="card_4_body">
+            <div id="card_4_departure_date">
+            </div>
+            <div id="card_4_username">
+            </div>
+          </div>
+          <div id="card_4_footer">
+            <div id="card_4_available_spots">
+            </div>
+            <div id="card_4_booked_spots">
+            </div>
+            <div id="card_4_gear_cost">
+              <button id="card_4_book_btn" onclick="check_to_book_trips(event)">
+                <div>Book for  </div>  
+                <div id="card_4_gear_cost_text">
+
+                </div>
+                <div id="card_4_gear_logo">
+                  <img id="card_4_gear_logo_img" src="images/gear-token-white.png" width="20" height="20" alt="Icon">
+                </div>
+              </button>
+            </div>
+          </div>
+          <div id="card_4_travel_id_section">
+            <div id="card_4_travel_id">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="empty_box">
+      </div>
+      <div id="change_page">
+        <div id="previous_page">
+          <button id="previous_page_btn"><img id="previous_page_img" width="30" height="30" src="images/icons8-arrow-left-24.png" alt="Icon"></button>
+        </div>
+        <div id="next_page">
+          <button id="next_page_btn"><img id="next_page_img" width="30" height="30" src="images/icons8-arrow-right-24.png" alt="Icon"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div id="first_div_footer">
+      <h2>Drive Together, Earn Forever</h2>
+      <p>Join Remora and share rides with others.<br>Save money, reduce your carbon footprint, and earn rewards!</p>
+    </div>
+    <div id="second_column">
+      <p>&copy Leonardo Cataldi<br>&copy Alessandro Calandrelli<br>&copy Francesco Goberti<br>&copy Martino Porceddu<br>&copy Matteo Vicari</p>
+    </div>
+    <div id="footer_img">
+      <img width="100" height="100" src="images/remora-white.png" alt="#">
+    </div>
+  </footer>
+
+</body>
+</html>

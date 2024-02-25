@@ -1,0 +1,137 @@
+/* style.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f4f4f4;
+  color: #012e40;
+}
+
+header {
+  background-image: url("../images/remora_bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #012e40;
+  padding: 10px 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  margin-right: 20px;
+  font-size: 16px;
+}
+
+form {
+  width: 300px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #012e40;
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #012e40;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #F2762E;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-link a {
+  color: #012e40;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+#section_nav{
+  display: flex;
+}
+
+#nav_image{
+  padding-left: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+#nav_text{
+  padding-top: 5px;
+}
+
+#header_box{
+  padding-left: 45%;
+  display: flex;
+}
+
+#header_image{
+  width: 70px;
+  height: 70px;
+}
+
+#title_text{
+  padding-left: 10px;
+  padding-top: 20px;
+}
+
+.menu_button{
+  background-color: #012e40;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+.menu_button:hover, #temp_button:hover{
+  color: #F2762E;
+}
+
+#error_message_username_login, #error_message_password_login, #error_message_username_register, #error_message_password_register, #error_message_email_register{
+  color: red;
+  font-size: 12px;
+  margin-top: -18px;
+}

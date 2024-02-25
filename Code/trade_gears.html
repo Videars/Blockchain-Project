@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/style_trade_gears.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/big.js/5.2.2/big.min.js"></script>
+  <script src="js/querygear.js"></script>
+  <title>Remora - Drive Together, Earn Forever</title>
+</head>
+<body>
+
+  <div id="bck_img"></div>
+
+  <header>
+    <div id="header_box">
+      <div>
+        <img id="header_image" src="images/remora-white.png" alt="Logo">
+      </div>
+      <div>
+        <h1 id="title_text">Remora</h1>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a id="section_nav"  class="menu_button" href="index.html">
+      <div id="nav_text">
+        Travels
+      </div>
+      
+      <div>
+        <img id="nav_image" src="images/icons8-car-50.png" alt="Icon">
+      </div>
+    </a>
+
+    <a id="section_nav" class="menu_button" href="trade_gears.html">
+      <div id="nav_text">
+        Trade Gears
+      </div>
+       
+      <div>
+        <img id="nav_image" src="images/gear-token-white.png" alt="Icon">
+      </div>
+    </a>
+
+    <a id="section_nav_profile" class="menu_button" href="login.html">
+      <div id="nav_text_profile">
+        Profile
+      </div>
+       
+      <div>
+        <img id="nav_image" src="images/icons8-customer-32.png" alt="Icon">
+      </div>
+    </a>
+
+    <a id="section_nav_login" class="menu_button" href="login.html">
+      <div id="nav_text_login">
+        Login
+      </div>
+       
+      <div>
+        <img id="nav_image" src="images/icons8-login-50.png" alt="Icon">
+      </div>
+    </a>
+  </nav>
+
+  <div id="new_sell_post_father">
+    <div id="switch_notification">
+      <div id="enable_notification_text">
+        Enable Notification
+      </div>
+      <label for="switch_element" class="switch">
+        <input type="checkbox" id="switch_element" checked>
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div id="new_sell_post_son">
+      <p id="new_sell_text">Sell Gears:</p>
+      <button id="new_sell_post_btn"><img src="images/icons8-plus-24.png" width="40" height="40" alt="Icon"></button>
+    </div>
+    <div id="notification_event_container">
+      <div id="notification_event" class="notification_content">
+        
+      </div>
+    </div>
+  </div>
+
+  <div id="invisible_div_unclickable">
+    <div id="pop_up_new_sell_gears">
+      <button id="close_pop_up_btn">
+        <img src="images/icons8-cross-100.png" width="15" height="15" alt="Icon">
+      </button>
+      <form id="compilable_form_new_sell_gears">
+        <div id="new_sell_gears_trade_section">
+          <div id="new_sell_gears_trade_gears">
+            <label for="new_sell_gears_trade_gears_input">Gears Offered:</label>
+            <input type="number" step="1" min="1" id="new_sell_gears_trade_gears_input" required>
+            <p id="error_message_gears"></p>
+          </div>
+          <div id="new_sell_gears_trade_ethereum">
+            <label for="new_sell_gears_trade_ethereum_input">Ethereum Requested per Token:</label>
+            <input type="number" max="1000" min="0.000000000000000001" id="new_sell_gears_trade_ethereum_input" required>
+            <p id="error_message_ethereum"></p>
+          </div>
+        </div>
+        <div id="new_sell_gears_receiver_wallet">
+          <label for="new_sell_gears_receiver_wallet_input">Receiver Wallet:</label>
+          <input type="text" id="new_sell_gears_receiver_wallet_input" readonly required>
+        </div>
+        <button id="new_sell_gears_confirm_button" type="button">
+          Confirm
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div id="invisible_div_unclickable_buy_offer">
+    <div id="pop_up_buy_offer">
+      <button id="close_pop_up_btn_buy">
+        <img src="images/icons8-cross-100.png" width="15" height="15" alt="Icon">
+      </button>
+      <form id="compilable_form_buy_offer">
+        <div id="buy_offer_trade_section">
+          <div id="buy_offer_trade_gears">
+            <label for="buy_offer_trade_gears_input">Gears to buy:</label>
+            <input type="number" step="1" min="1" id="buy_offer_trade_gears_input" oninput="updateInput(this.value)" required>
+            <p id="error_message_gears_buy"></p>
+          </div>
+          <div id="buy_offer_trade_ethereum">
+            <label for="buy_offer_trade_ethereum_input">Total Ethereum to spend:</label>
+            <input type="number" id="buy_offer_trade_ethereum_input" readonly required>
+          </div>
+        </div>
+        <div id="buy_offer_sender_wallet">
+          <label for="buy_offer_sender_wallet_input">My Wallet:</label>
+          <input type="text" id="buy_offer_sender_wallet_input" readonly required>
+        </div>
+        <button id="buy_offer_confirm_button" type="button">
+          Confirm
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div id="sell_post_father">
+    <div id="sell_post_son">
+      <div id="sell_boxes">
+        <div id="card_0">
+          <div id="card_0_principal">
+            <div id="card_0_offer">
+              <div id="card_0_gears_offered">
+                <div id="card_0_gears_offered_text">
+                  
+                </div>
+                <div id="card_0_gear_img">
+                  <img src="images/gear-token.png" width="35" height="35" alt="Icon">
+                </div>
+              </div>
+              <div id="card_0_right_arrow">
+                <img id="card_0_right_arrow" src="images/icons8-arrow-right-24.png" width="30" height="30" alt="Icon">
+              </div>
+              <div id="card_0_eth_requested">
+                <div id="card_0_eth_requested_text">
+                  
+                </div>
+                <div>
+                  <img src="images/icons8-ethereum-96.png" width="35" height="35" alt="Icon">
+                </div>
+              </div>
+            </div>
+            <div id="card_0_footer">
+              <div id="card_0_footer_seller">
+                
+              </div>
+            </div>
+          </div>
+          <div id="card_0_button_box">
+            <button id="card_0_btn" onclick="check_to_buy_an_offer(event)">Buy <img id="card_0_cart_img" src="images/icons8-cart-96.png" width="25" height="25" alt="Icon"></button>
+          </div>
+        </div>
+        <div id="card_1">
+          <div id="card_1_principal">
+            <div id="card_1_offer">
+              <div id="card_1_gears_offered">
+                <div id="card_1_gears_offered_text">
+                  
+                </div>
+                <div id="card_1_gear_img">
+                  <img src="images/gear-token.png" width="35" height="35" alt="Icon">
+                </div>
+              </div>
+              <div id="card_1_right_arrow">
+                <img id="card_1_right_arrow" src="images/icons8-arrow-right-24.png" width="30" height="30" alt="Icon">
+              </div>
+              <div id="card_1_eth_requested">
+                <div id="card_1_eth_requested_text">
+                  
+                </div>
+                <div>
+                  <img src="images/icons8-ethereum-96.png" width="35" height="35" alt="Icon">
+                </div>
+              </div>
+            </div>
+            <div id="card_1_footer">
+              <div id="card_1_footer_seller">
+                
+              </div>
+            </div>
+          </div>
+          <div id="card_1_button_box">
+            <button id="card_1_btn" onclick="check_to_buy_an_offer(event)">Buy <img id="card_1_cart_img" src="images/icons8-cart-96.png" width="25" height="25" alt="Icon"></button>
+          </div>
+        </div>
+        <div id="card_2">
+          <div id="card_2_principal">
+            <div id="card_2_offer">
+              <div id="card_2_gears_offered">
+                <div id="card_2_gears_offered_text">
+                  
+                </div>
+                <div id="card_2_gear_img">
+                  <img src="images/gear-token.png" width="35" height="35" alt="Icon">
+                </div>
+              </div>
+              <div id="card_2_right_arrow">
+                <img id="card_2_right_arrow" src="images/icons8-arrow-right-24.png" width="30" height="30" alt="Icon">
+              </div>
+              <div id="card_2_eth_requested">
+                <div id="card_2_eth_requested_text">
+                  
+                </div>
+                <div>
+                  <img src="images/icons8-ethereum-96.png" width="35" height="35" alt="Icon">
+                </div>
+              </div>
+            </div>
+            <div id="card_2_footer">
+              <div id="card_2_footer_seller">
+                
+              </div>
+            </div>
+          </div>
+          <div id="card_2_button_box">
+            <button id="card_2_btn" onclick="check_to_buy_an_offer(event)">Buy <img id="card_2_cart_img" src="images/icons8-cart-96.png" width="25" height="25" alt="Icon"></button>
+          </div>
+        </div>
+        <div id="card_3">
+          <div id="card_3_principal">
+            <div id="card_3_offer">
+              <div id="card_3_gears_offered">
+                <div id="card_3_gears_offered_text">
+                  
+                </div>
+                <div id="card_3_gear_img">
+                  <img src="images/gear-token.png" width="35" height="35" alt="Icon">
+                </div>
+              </div>
+              <div id="card_3_right_arrow">
+                <img id="card_3_right_arrow" src="images/icons8-arrow-right-24.png" width="30" height="30" alt="Icon">
+              </div>
+              <div id="card_3_eth_requested">
+                <div id="card_3_eth_requested_text">
+                  
+                </div>
+                <div>
+                  <img src="images/icons8-ethereum-96.png" width="35" height="35" alt="Icon">
+                </div>
+              </div>
+            </div>
+            <div id="card_3_footer">
+              <div id="card_3_footer_seller">
+                
+              </div>
+            </div>
+          </div>
+          <div id="card_3_button_box">
+            <button id="card_3_btn" onclick="check_to_buy_an_offer(event)">Buy <img id="card_3_cart_img" src="images/icons8-cart-96.png" width="25" height="25" alt="Icon"></button>
+          </div>
+        </div>
+        <div id="card_4">
+          <div id="card_4_principal">
+            <div id="card_4_offer">
+              <div id="card_4_gears_offered">
+                <div id="card_4_gears_offered_text">
+                  
+                </div>
+                <div id="card_4_gear_img">
+                  <img src="images/gear-token.png" width="35" height="35" alt="Icon">
+                </div>
+              </div>
+              <div id="card_4_right_arrow">
+                <img id="card_4_right_arrow" src="images/icons8-arrow-right-24.png" width="30" height="30" alt="Icon">
+              </div>
+              <div id="card_4_eth_requested">
+                <div id="card_4_eth_requested_text">
+                  
+                </div>
+                <div>
+                  <img src="images/icons8-ethereum-96.png" width="35" height="35" alt="Icon">
+                </div>
+              </div>
+            </div>
+            <div id="card_4_footer">
+              <div id="card_4_footer_seller">
+                
+              </div>
+            </div>
+          </div>
+          <div id="card_4_button_box">
+            <button id="card_4_btn" onclick="check_to_buy_an_offer(event)">Buy <img id="card_4_cart_img" src="images/icons8-cart-96.png" width="25" height="25" alt="Icon"></button>
+          </div>
+        </div>
+      </div>
+      <div id="empty_box">
+      </div>
+      <div id="change_page">
+        <div id="previous_page">
+          <button id="previous_page_btn"><img id="previous_page_img" width="30" height="30" src="images/icons8-arrow-left-24.png" alt="Icon"></button>
+        </div>
+        <div id="next_page">
+          <button id="next_page_btn"><img id="next_page_img" width="30" height="30" src="images/icons8-arrow-right-24.png" alt="Icon"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div id="first_div_footer">
+      <h2>Drive Together, Earn Forever</h2>
+      <p>Join Remora and share rides with others.<br>Save money, reduce your carbon footprint, and earn rewards!</p>
+    </div>
+    <div id="second_column">
+      <p>&copy Leonardo Cataldi<br>&copy Alessandro Calandrelli<br>&copy Francesco Goberti<br>&copy Martino Porceddu<br>&copy Matteo Vicari</p>
+    </div>
+    <div id="footer_img">
+      <img width="100" height="100" src="images/remora-white.png" alt="#">
+    </div>
+  </footer>
+
+</body>
+</html>

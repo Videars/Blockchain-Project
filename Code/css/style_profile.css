@@ -1,0 +1,991 @@
+/* style.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f4;
+    color: #012e40;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+  
+header {
+    background-image: url("../images/remora_bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    text-align: center;
+}
+  
+header h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+}
+  
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #012e40;
+    padding: 10px 20px;
+}
+  
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    margin-right: 20px;
+    font-size: 16px;
+}
+    
+#section_nav{
+    display: flex;
+}
+  
+#nav_image{
+    padding-left: 5px;
+    width: 30px;
+    height: 30px;
+}
+  
+#nav_text{
+    padding-top: 5px;
+}
+
+#nav_text_login{
+    padding-top: 5px;
+  }
+  
+#section_nav_login{
+    display: flex;
+}
+  
+#header_box{
+    padding-left: 45%;
+    display: flex;
+}
+  
+#header_image{
+    width: 70px;
+    height: 70px;
+}
+  
+#title_text{
+    padding-left: 10px;
+    padding-top: 20px;
+}
+  
+.menu_button:hover{
+    color: #F2762E;
+}
+
+footer{
+    display: flex;
+    width: 100%;
+    height: 150px;
+    color: #fff;
+    background-color: #012e40;
+    margin-top: auto;
+}
+  
+#first_div_footer{
+    margin-left: 10px;
+    width: 50%;
+}
+  
+#second_column{
+    width: 40%;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+#footer_img{
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#container_father_profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container_son_profile{
+    margin-top: 30px;
+    width: 90%;
+    margin-bottom: 30px;
+}
+
+#profile_header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    background-color: #fafafa;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#profile_image_container, #profile_data, #profile_gear_balance{
+    flex: 33%;
+    text-align: center;    
+}
+
+#profile_image_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#profile_image{
+    border-radius: 50%;
+    filter: drop-shadow(10px 7px 5px rgba(1, 46, 64, 0.6));
+}
+
+#profile_gear_update_btn{
+    margin-left: 20px;
+    margin-top: 10px;
+    background-color: #012e40;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+  
+#profile_gear_update_btn:hover{
+    background-color: #F2762E;
+}
+
+#notification_header{
+    background-color: #fafafa;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 310px;
+    margin-top: 5px;
+    position: relative;
+}
+
+#notification_header_text{
+    display: flex;
+    padding-top: 10px;
+    margin-left: 10px;
+}
+
+#notification_img{
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+#notification_header_body{
+    margin-top: 10px;
+    height: 220px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+#button_notification_section{
+    display: flex;
+    position: absolute;
+    right: 10px;
+    margin-top: 5px;
+}
+
+#previous_page_notification_btn{
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+  
+#next_page_notification_btn{
+    background-color: #fff;
+    margin-left: 5px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+  
+#previous_page_notification_btn:hover, #next_page_notification_btn:hover{
+    border: 1px solid #f2762ead;
+    border-radius: 2px;
+}
+
+#ongoing_trips_payment_header{
+    background-color: #fafafa;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 625px;
+    margin-top: 5px;
+    position:relative
+}
+
+#ongoing_trips_payment_header_text{
+    display: flex;
+    padding-top: 10px;
+    margin-left: 10px;
+}
+
+#ongoing_trips_img{
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+#ongoing_trips_header_body{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 535px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+#ongoing_trips_img_container{
+    margin-left: 3px;
+}
+
+#button_trips_section{
+    display: flex;
+    position: absolute;
+    right: 10px;
+    margin-top: 5px;
+}
+
+#previous_page_trips_btn{
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+  
+#next_page_trips_btn{
+    background-color: #fff;
+    margin-left: 5px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+  
+#previous_page_trips_btn:hover, #next_page_trips_btn:hover{
+    border: 1px solid #f2762ead;
+    border-radius: 2px;
+}
+
+#wallet_profile_header{
+    background-color: #fafafa;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 60px;
+    margin-top: 5px;
+    display: flex;
+}
+
+#wallet_profile_header_text{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 10px;
+    flex: 10%;
+}
+
+#add_wallet_btn_container{
+    margin-left: 10px;
+    display: flex;
+    flex: 15%;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#wallet_profile_header_metamask_address{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 10px;
+    flex: 65%;
+}
+
+#wallet_profile_header_metamask_check{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    flex: 10%;
+}
+
+#wallet_profile_img{
+    margin-left: 5px;
+    margin-top: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+#wallet_profile_text{
+    margin-top: 5px;
+}
+
+#wallet_profile_img{
+    width: 30px;
+    height: 30px;
+}
+
+@keyframes glow_disconnected {
+    0% {
+      box-shadow: 0 0 0 0 #dc143c;
+    }
+    
+    50% {
+      box-shadow: 0 0 30px 0 #dc143c;
+    }
+}
+
+@keyframes glow_connected {
+    0% {
+      box-shadow: 0 0 0 0 #14dc50;
+    }
+    
+    50% {
+      box-shadow: 0 0 30px 0 #14dc50;
+    }
+}
+
+#check_metamask_connection {
+    padding: 7px;
+    color: white;
+    box-shadow: 0 0 0 0 #dc143c;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #dc143c;
+    text-transform: uppercase;
+    animation: glow_disconnected 1.8s linear infinite;
+    transition: all 0.35s ease-in-out;
+}
+
+#add_wallet_btn {
+    background-color: #012e40;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+  
+#add_wallet_btn:hover {
+    background-color: #F2762E;
+}
+
+#personal_info_stats_profile_header{
+    background-color: #fafafa;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 170px;
+    margin-top: 5px;
+    position: relative;
+}
+
+#personal_info_stats_profile_header_text{
+    display: flex;
+    padding-top: 10px;
+    margin-left: 10px;
+}
+
+#personal_info_stats_profile_img{
+    margin-top: -2px;
+    width: 20px;
+    height: 20px;
+}
+
+#personal_info_stats_profile_header_body{
+    margin-top: 10px;
+    height: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+#personal_info_stats_profile_img_container{
+    margin-left: 3px;
+}
+
+#profile_trips_given, #profile_trips_received, #profile_minted_gears, #participated_trips, #profile_unminted_trips_counter{
+    margin-left: 5px;
+    margin-top: 5px;
+    color: #012e40;
+}
+
+#profile_trips_given{
+    padding-top: 3px;
+}
+
+#card_0_notification, #card_1_notification, #card_2_notification, #card_3_notification{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(1, 46, 64, 0.3);
+    position: relative;
+}
+
+#card_0_notification_text, #card_1_notification_text, #card_2_notification_text, #card_3_notification_text{
+    margin-left: 10px;
+}
+
+#card_0_notification_ok_text, #card_1_notification_ok_text, #card_2_notification_ok_text, #card_3_notification_ok_text{
+    margin-left: 10px;
+}
+
+#card_0_notification_button_section, #card_1_notification_button_section, #card_2_notification_button_section, #card_3_notification_button_section{
+    position: absolute;
+    right: 0;
+    display: flex;
+    margin-right: 10px;
+}
+
+#card_0_notification_confirm_btn, #card_1_notification_confirm_btn, #card_2_notification_confirm_btn, #card_3_notification_confirm_btn{
+    margin-right: 10px;
+    background-color: rgba(0, 128, 0, 0.8);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(1, 46, 64, 0.1);
+    border: none;
+}
+
+#card_0_notification_deny_btn, #card_1_notification_deny_btn, #card_2_notification_deny_btn, #card_3_notification_deny_btn{
+    background-color: rgba(255, 0, 0, 0.8);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(1, 46, 64, 0.1);
+    border: none;
+}
+
+#card_0_notification_confirm_btn:hover, #card_0_notification_deny_btn:hover , #card_1_notification_confirm_btn:hover, #card_1_notification_deny_btn:hover, #card_2_notification_confirm_btn:hover, #card_2_notification_deny_btn:hover, #card_3_notification_confirm_btn:hover, #card_3_notification_deny_btn:hover{
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+
+#card_0_notification_ok_btn, #card_1_notification_ok_btn, #card_2_notification_ok_btn, #card_3_notification_ok_btn{
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(1, 46, 64, 0.1);
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    background-color: #012e40;
+}
+
+#card_0_notification_button_ok, #card_1_notification_button_ok, #card_2_notification_button_ok, #card_3_notification_button_ok{
+    margin-right: 20px;
+}
+
+#card_0_notification_ok_btn:hover, #card_1_notification_ok_btn:hover, #card_2_notification_ok_btn:hover,#card_3_notification_ok_btn:hover{
+    cursor: pointer;
+    transform: translateY(-2px);
+    background-color: #F2762E;
+}
+
+#card_0_father, #card_1_father, #card_2_father, #card_3_father{
+    height: 55px;
+}
+
+#card_0_container, #card_1_container, #card_2_container, #card_3_container{
+    position: relative;
+}
+
+#card_0_confirm_section, #card_1_confirm_section, #card_2_confirm_section, #card_3_confirm_section{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+}
+
+#card_0_ok_section, #card_1_ok_section, #card_2_ok_section, #card_3_ok_section{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+}
+
+#empty_box{
+    background-color: lightgray;
+    margin-top: 10px;
+    height: 130px;
+    padding-top: 90px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    font-size: 24px;
+    text-align: center;
+    display: none;
+}
+
+#trip_boxes{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+#card_0, #card_1, #card_2, #card_3, #card_4{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 160px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(1, 46, 64, 0.3);
+    display: none;
+}
+  
+#card_0_header, #card_1_header, #card_2_header, #card_3_header, #card_4_header{
+    margin-top: 5px;
+    display: flex;
+    text-align: center;
+    width: 100%;
+}
+  
+#card_0_departure, #card_1_departure, #card_2_departure, #card_3_departure, #card_4_departure{
+    margin-top: 5px;
+    text-align: center;
+    flex: 33%;
+    font-size: 24px;
+    font-weight: bold;
+}
+  
+#card_0_arrow, #card_1_arrow, #card_2_arrow, #card_3_arrow, #card_4_arrow{
+    margin-top: 5px;
+    text-align: center;
+    flex: 33%;
+}
+  
+#card_0_destination, #card_1_destination, #card_2_destination, #card_3_destination, #card_4_destination{
+    margin-top: 5px;
+    text-align: center;
+    flex: 33%;
+    font-size: 24px;
+    font-weight: bold;
+}
+  
+#card_0_body, #card_1_body, #card_2_body, #card_3_body, #card_4_body{
+    margin-top: 20px;
+    display: flex;
+    text-align: center;
+    width: 100%;
+}
+  
+#card_0_departure_date, #card_1_departure_date, #card_2_departure_date, #card_3_departure_date, #card_4_departure_date{
+    margin-top: 5px;
+    text-align: center;
+    flex: 50%;
+}
+
+#card_0_username, #card_1_username, #card_2_username, #card_3_username, #card_4_username{
+    margin-top: 5px;
+    text-align: center;
+    flex: 50%;
+}
+  
+#card_0_footer, #card_1_footer, #card_2_footer, #card_3_footer, #card_4_footer{
+    margin-top: 15px;
+    display: flex;
+    text-align: center;
+    width: 100%;
+}
+  
+#card_0_available_spots, #card_1_available_spots, #card_2_available_spots, #card_3_available_spots, #card_4_available_spots{
+    margin-top: 5px;
+    flex: 33%;
+}
+  
+#card_0_booked_spots, #card_1_booked_spots, #card_2_booked_spots, #card_3_booked_spots, #card_4_booked_spots{
+    margin-top: 5px;
+    flex: 33%;
+}
+  
+#card_0_gear_cost, #card_1_gear_cost, #card_2_gear_cost, #card_0_store_on_blockchain, #card_1_store_on_blockchain, #card_2_store_on_blockchain, #card_0_end_trip_on_blockchain, #card_1_end_trip_on_blockchain, #card_2_end_trip_on_blockchain, #card_0_trip_payed, #card_1_trip_payed, #card_2_trip_payed{
+    text-align: center;
+    flex: 33%;
+}
+
+#card_0_trip_payed_text, #card_1_trip_payed_text, #card_2_trip_payed_text{
+    font-size: 14px;
+    font-weight: bold;
+    color: #14dc50;
+    margin-top: 20px;
+}
+  
+#card_0_travel_id_section, #card_1_travel_id_section, #card_2_travel_id_section, #card_0_wallet_ongoing_section, #card_1_wallet_ongoing_section, #card_2_wallet_ongoing_section{
+    display: flex;
+    width: 100%;
+}
+
+#card_0_wallet_ongoing_section, #card_1_wallet_ongoing_section, #card_2_wallet_ongoing_section{
+    margin-top: -10px;
+    display: flex;
+    width: 100%;
+}
+  
+#card_0_travel_id, #card_1_travel_id, #card_2_travel_id, #card_0_wallet_ongoing_id, #card_1_wallet_ongoing_id, #card_2_wallet_ongoing_id{
+   margin-left: 15px;
+   font-size: 11px;
+   color: #9a9a9a;
+}
+  
+#card_0_book_btn, #card_1_book_btn, #card_2_book_btn{
+    background-color: #012e40;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+#card_0_store_btn, #card_1_store_btn, #card_2_store_btn, #card_0_end_trip_btn, #card_1_end_trip_btn, #card_2_end_trip_btn{
+    background-color: #012e40;
+    color: #fff;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+  
+#card_0_book_btn:hover, #card_1_book_btn:hover, #card_2_book_btn:hover, #card_0_store_btn:hover, #card_1_store_btn:hover, #card_2_store_btn:hover, #card_0_end_trip_btn:hover, #card_1_end_trip_btn:hover, #card_2_end_trip_btn:hover{
+    background-color: #F2762E;
+}
+  
+#card_0_gear_cost_text, #card_1_gear_cost_text, #card_2_gear_cost_text, #card_3_gear_cost_text, #card_4_gear_cost_text{
+    margin-left: 5px;
+}
+  
+#card_0_gear_logo, #card_1_gear_logo, #card_2_gear_logo, #card_3_gear_logo, #card_4_gear_logo{
+    margin-left: 5px;
+    margin-top: 3.5px;
+}
+
+#empty_box_ongoing_trips{
+    background-color: lightgray;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    width: 100%;
+    padding-top: 220px;
+    height: 315px;
+    text-align: center;
+    font-size: 24px;
+    display: none;
+}
+
+#invisible_div_unclickable{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+  
+#pop_up_new_payment{
+    background-color: #ffffff;
+    width: 50%;
+    height: 130px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+  
+#close_pop_up_btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: pointer;
+    border: none;
+}
+  
+#close_pop_up_btn:hover{
+    background-color: #F2762E;
+}
+  
+#compilable_form_payment{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+  
+label{
+    margin-top: 10px;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #012e40;
+}
+
+#new_payment_confirm_button{
+    background-color: #012e40;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+}
+  
+#new_payment_confirm_button:hover{
+    background-color: #F2762E;
+}
+
+#new_payment_receiver_wallet_input{
+    width: 437px;
+}
+
+#error_message_payment_receiver{
+    color: red;
+    font-size: 10px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+#personal_info_minting_button_section{
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    display: none;
+}
+
+#personal_info_minting_btn{
+    background-color: #012e40;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+  
+#personal_info_minting_btn:hover{
+    background-color: #F2762E;
+}
+
+#bck_img{
+    background-image: url(../images/rome-8000-sma-feed8a-preview.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    position: fixed;
+    z-index:-1;
+    filter: blur(2px);
+}
+  
+#bck_img::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(1, 46, 64, 0.4);
+    z-index: 1;
+}
+
+#my_offer_section{
+    background-color: #fafafa;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 250px;
+    margin-top: 5px;
+    position:relative
+}
+
+#my_offer_header_text{
+    display: flex;
+    padding-top: 10px;
+    margin-left: 10px;
+}
+
+#my_offer_img_container{
+    margin-left: 3px;
+}
+
+#my_offer_img{
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+#my_offer_section_body{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 190px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+#my_offer_box{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#card_0_my_offer{
+    margin-top: 10px;
+    display: flex;
+    height: 160px;
+    width: 95%;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, scale 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: none;
+    position: relative;
+}
+
+#card_0_my_offer_principal{
+    width: 100%;
+}
+
+#card_0_my_offer_offer{
+    margin-top: 30px;
+    flex: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#card_0_my_offer_gears_offered{
+    display: flex;
+    flex: 35%;
+    align-items: center;
+    justify-content: center;
+}
+
+#card_0_my_offer_gears_offered_text, #card_0_my_offer_eth_requested_text{
+    font-size: 24px;
+    text-align: center;
+}
+
+#card_0_my_offer_gear_img{
+    margin-left: 5px;
+}
+
+#card_0_my_offer_right_arrow{
+    margin-top: 5px;
+    flex: 5%;
+    text-align: center;
+}
+
+#card_0_my_offer_eth_requested{
+    display: flex;
+    flex: 60%;
+    align-items: center;
+    justify-content: center;
+}
+
+#card_0_my_offer_footer{
+    margin-top: 20px;
+    flex: 100%;
+}
+
+#card_0_my_offer_footer_seller{
+    margin-left: 60px;
+}
+
+#card_0_my_offer_button_box_add_gears{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+#card_0_my_offer_button_box_retrieve_gears{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 150px;
+    bottom: 20px;
+}
+
+#card_0_my_offer_button_box_update_price{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 320px;
+    bottom: 20px;
+}
+
+#card_0_my_offer_btn_add_gears, #card_0_my_offer_btn_retrieve_gears, #card_0_my_offer_btn_update_price{
+    background-color: #012e40;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+  
+#card_0_my_offer_btn_add_gears:hover, #card_0_my_offer_btn_retrieve_gears:hover, #card_0_my_offer_btn_update_price:hover{
+    background-color: #F2762E;
+}
+
+#empty_box_my_offer{
+    background-color: lightgray;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    width: 100%;
+    height: 110px;
+    padding-top: 80px;
+    text-align: center;
+    font-size: 24px;
+    display: none;
+}

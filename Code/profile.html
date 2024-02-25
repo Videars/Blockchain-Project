@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/style_profile.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script src="js/queryprofile.js"></script>
+  <title>Remora - Drive Together, Earn Forever</title>
+</head>
+
+<body>
+
+  <div id="bck_img"></div>
+
+  <header>
+    <div id="header_box">
+      <div>
+        <img id="header_image" src="images/remora-white.png" alt="Logo">
+      </div>
+      <div>
+        <h1 id="title_text">Remora</h1>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a id="section_nav"  class="menu_button" href="index.html">
+      <div id="nav_text">
+        Travels
+      </div>
+      
+      <div>
+        <img id="nav_image" src="images/icons8-car-50.png" alt="Icon">
+      </div>
+    </a>
+
+    <a id="section_nav" class="menu_button" href="trade_gears.html">
+      <div id="nav_text">
+        Trade Gears
+      </div>
+       
+      <div>
+        <img id="nav_image" src="images/gear-token-white.png" alt="Icon">
+      </div>
+    </a>
+
+    <a id="section_nav" class="menu_button" href="profile.html">
+      <div id="nav_text">
+        Profile
+      </div>
+       
+      <div>
+        <img id="nav_image" src="images/icons8-customer-32.png" alt="Icon">
+      </div>
+    </a>
+
+    <a id="section_nav_login" class="menu_button" href="login.html">
+      <div id="nav_text_login">
+        Login
+      </div>
+       
+      <div>
+        <img id="nav_image" src="images/icons8-login-50.png" alt="Icon">
+      </div>
+    </a>
+  </nav>
+
+  <div id="invisible_div_unclickable">
+    <div id="pop_up_new_payment">
+      <button id="close_pop_up_btn">
+        <img src="images/icons8-cross-100.png" width="15" height="15" alt="Icon">
+      </button>
+      <form id="compilable_form_payment">
+        <div id="new_payment_receiver_wallet">
+          <label for="new_payment_receiver_wallet_input" id="new_payment_receiver_wallet_input_id">Receiver Wallet:</label>
+          <input type="text" id="new_payment_receiver_wallet_input" readonly required>
+          <p id="error_message_payment_receiver"></p>
+        </div>
+        <button id="new_payment_confirm_button" type="button">
+          Confirm
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div id="container_father_profile">
+    <div id="container_son_profile">
+      <div id="profile_header">
+        <div id="profile_image_container">
+          <img id="profile_image" width="300" height="300" src="#" alt="">
+        </div>
+        <div id="profile_data">
+          <div id="profile_username">
+            
+          </div>
+          <div id="profile_email">
+            
+          </div>
+        </div>
+        <div id="profile_gear_balance">
+          <div id="profile_gear_text">
+            
+          </div>
+          <button id="profile_gear_update_btn">
+            Update Balance
+          </button>
+        </div>
+      </div>
+
+      <div id="wallet_profile_header">
+        <div id="wallet_profile_header_text">
+          <div id="wallet_profile_text">
+            Wallet
+          </div>
+          <div>
+            <img id="wallet_profile_img" src="images/icons8-metamask-logo-100.png" alt="Icon">
+          </div>
+        </div>
+        <div id="add_wallet_btn_container">
+          <button id="add_wallet_btn">
+            Add Wallet
+          </button>
+        </div>
+        <div id="wallet_profile_header_metamask_address">
+          <div id="metamask_address">
+          </div>
+        </div>
+        <div id="wallet_profile_header_metamask_check">
+          <div>
+            <div id="check_metamask_connection">
+              <img width="30" height="30" src="/images/icons8-metamask-100.png" alt="#">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="notification_header">
+        <div id="notification_header_text">
+          <div id="notification_text">
+            Notification
+          </div>
+          <div>
+            <img id="notification_img" src="images/icons8-notification-48.png" alt="Icon">
+          </div>
+        </div>
+        <div id="notification_header_body">
+          <div id="card_0_father">
+            <div id="card_0_container">
+              <div id="card_0_confirm_section">
+                <div id="card_0_notification">
+                  <div id="card_0_notification_text">
+                  </div>
+                  <div id="card_0_notification_button_section">
+                    <div id="card_0_notification_button_confirm">
+                      <button id="card_0_notification_confirm_btn">
+                        <img width="20" height="20" src="images/icons8-confirm-100.png" alt="V">
+                      </button>
+                    </div>
+                    <div id="card_0_notification_button_deny">
+                      <button id="card_0_notification_deny_btn">
+                        <img width="20" height="20" src="images/icons8-cross-100-white.png" alt="X">
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="card_0_ok_section">
+                <div id="card_0_notification">
+                  <div id="card_0_notification_ok_text">
+                  </div>
+                  <div id="card_0_notification_button_section">
+                    <div id="card_0_notification_button_ok">
+                      <button id="card_0_notification_ok_btn">
+                        Ok
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="card_1_father">
+            <div id="card_1_container">
+              <div id="card_1_confirm_section">
+                <div id="card_1_notification">
+                  <div id="card_1_notification_text">
+                  </div>
+                  <div id="card_1_notification_button_section">
+                    <div id="card_1_notification_button_confirm">
+                      <button id="card_1_notification_confirm_btn">
+                        <img width="20" height="20" src="images/icons8-confirm-100.png" alt="V">
+                      </button>
+                    </div>
+                    <div id="card_1_notification_button_deny">
+                      <button id="card_1_notification_deny_btn">
+                        <img width="20" height="20" src="images/icons8-cross-100-white.png" alt="X">
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="card_1_ok_section">
+                <div id="card_1_notification">
+                  <div id="card_1_notification_ok_text">
+                  </div>
+                  <div id="card_1_notification_button_section">
+                    <div id="card_1_notification_button_ok">
+                      <button id="card_1_notification_ok_btn">
+                        Ok
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="card_2_father">
+            <div id="card_2_container">
+              <div id="card_2_confirm_section">
+                <div id="card_2_notification">
+                  <div id="card_2_notification_text">
+                  </div>
+                  <div id="card_2_notification_button_section">
+                    <div id="card_2_notification_button_confirm">
+                      <button id="card_2_notification_confirm_btn">
+                        <img width="20" height="20" src="images/icons8-confirm-100.png" alt="V">
+                      </button>
+                    </div>
+                    <div id="card_2_notification_button_deny">
+                      <button id="card_2_notification_deny_btn">
+                        <img width="20" height="20" src="images/icons8-cross-100-white.png" alt="X">
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="card_2_ok_section">
+                <div id="card_2_notification">
+                  <div id="card_2_notification_ok_text">
+                  </div>
+                  <div id="card_2_notification_button_section">
+                    <div id="card_2_notification_button_ok">
+                      <button id="card_2_notification_ok_btn">
+                        Ok
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="card_3_father">
+            <div id="card_3_container">
+              <div id="card_3_confirm_section">
+                <div id="card_3_notification">
+                  <div id="card_3_notification_text">
+                  </div>
+                  <div id="card_3_notification_button_section">
+                    <div id="card_3_notification_button_confirm">
+                      <button id="card_3_notification_confirm_btn">
+                        <img width="20" height="20" src="images/icons8-confirm-100.png" alt="V">
+                      </button>
+                    </div>
+                    <div id="card_3_notification_button_deny">
+                      <button id="card_3_notification_deny_btn">
+                        <img width="20" height="20" src="images/icons8-cross-100-white.png" alt="X">
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="card_3_ok_section">
+                <div id="card_3_notification">
+                  <div id="card_3_notification_ok_text">
+                  </div>
+                  <div id="card_3_notification_button_section">
+                    <div id="card_3_notification_button_ok">
+                      <button id="card_3_notification_ok_btn">
+                        Ok
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="empty_box">
+        </div>
+        <div id="button_notification_section">
+          <div id="previous_page_notification">
+            <button id="previous_page_notification_btn">
+              <img id="previous_page_notification_img" width="30" height="30" src="images/icons8-arrow-left-24.png" alt="Icon">
+            </button>
+          </div>
+          <div id="next_page_notification">
+            <button id="next_page_notification_btn">
+              <img id="next_page_notification_img" width="30" height="30" src="images/icons8-arrow-right-24.png" alt="Icon">
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div id="ongoing_trips_payment_header">
+        <div id="ongoing_trips_payment_header_text">
+          <div id="ongoing_trips_payment_text">
+            OnGoing Trips
+          </div>
+          <div id="ongoing_trips_img_container">
+            <img id="ongoing_trips_img" src="images/icons8-taxi-mobile-payment-30.png" alt="Icon">
+          </div>
+        </div>
+        <div id="ongoing_trips_header_body">
+          <div id="trip_boxes">
+            <div id="card_0">
+              <div id="card_0_header">
+                <div id="card_0_departure">
+                  
+                </div>
+                <div id="card_0_arrow">
+                  <img id="card_0_right_arrow" src="images/icons8-arrow-right-24.png" width="30" height="30" alt="Icon">
+                </div>
+                <div id="card_0_destination">
+                  
+                </div>
+              </div>
+              <div id="card_0_body">
+                <div id="card_0_departure_date">
+                </div>
+                <div id="card_0_username">
+                </div>
+              </div>
+              <div id="card_0_footer">
+                <div id="card_0_available_spots">
+                </div>
+                <div id="card_0_booked_spots">
+                </div>
+                <div id="card_0_gear_cost">
+                  <button id="card_0_book_btn" onclick="payment_function(event)">
+                    <div>PAY for  </div>  
+                    <div id="card_0_gear_cost_text">
+    
+                    </div>
+                    <div id="card_0_gear_logo">
+                      <img id="card_0_gear_logo_img" src="images/gear-token-white.png" width="20" height="20" alt="Icon">
+                    </div>
+                  </button>
+                </div>
+                <div id="card_0_store_on_blockchain">
+                  <button id="card_0_store_btn" onclick="blockchain_porting_trip_function(event)">
+                    <div>STORE on<br> Blockchain</div>
+                  </button>
+                </div>
+                <div id="card_0_end_trip_on_blockchain">
+                  <button id="card_0_end_trip_btn" onclick="blockchain_end_trip_function(event)">
+                    <div>END TRIP on<br> Blockchain</div>
+                  </button>
+                </div>
+                <div id="card_0_trip_payed">
+                  <div id="card_0_trip_payed_text">PAID</div>
+                </div>
+              </div>
+              <div id="card_0_wallet_ongoing_section">
+                <div id="card_0_wallet_ongoing_id">
+                </div>
+              </div>
+              <div id="card_0_travel_id_section">
+                <div id="card_0_travel_id">
+                </div>
+              </div>
+            </div>
+            <div id="card_1">
+              <div id="card_1_header">
+                <div id="card_1_departure">
+                  
+                </div>
+                <div id="card_1_arrow">
+                  <img id="card_1_right_arrow" src="images/icons8-arrow-right-24.png" width="30" height="30" alt="Icon">
+                </div>
+                <div id="card_1_destination">
+                  
+                </div>
+              </div>
+              <div id="card_1_body">
+                <div id="card_1_departure_date">
+                </div>
+                <div id="card_1_username">
+                </div>
+              </div>
+              <div id="card_1_footer">
+                <div id="card_1_available_spots">
+                </div>
+                <div id="card_1_booked_spots">
+                </div>
+                <div id="card_1_gear_cost">
+                  <button id="card_1_book_btn" onclick="payment_function(event)">
+                    <div>PAY for  </div>  
+                    <div id="card_1_gear_cost_text">
+    
+                    </div>
+                    <div id="card_1_gear_logo">
+                      <img id="card_1_gear_logo_img" src="images/gear-token-white.png" width="20" height="20" alt="Icon">
+                    </div>
+                  </button>
+                </div>
+                <div id="card_1_store_on_blockchain">
+                  <button id="card_1_store_btn" onclick="blockchain_porting_trip_function(event)">
+                    <div>STORE on<br> Blockchain</div>
+                  </button>
+                </div>
+                <div id="card_1_end_trip_on_blockchain">
+                  <button id="card_1_end_trip_btn" onclick="blockchain_end_trip_function(event)">
+                    <div>END TRIP on<br> Blockchain</div>
+                  </button>
+                </div>
+                <div id="card_1_trip_payed">
+                  <div id="card_1_trip_payed_text">PAID</div>
+                </div>
+              </div>
+              <div id="card_1_wallet_ongoing_section">
+                <div id="card_1_wallet_ongoing_id">
+                </div>
+              </div>
+              <div id="card_1_travel_id_section">
+                <div id="card_1_travel_id">
+                </div>
+              </div>
+            </div>
+            <div id="card_2">
+              <div id="card_2_header">
+                <div id="card_2_departure">
+                  
+                </div>
+                <div id="card_2_arrow">
+                  <img id="card_2_right_arrow" src="images/icons8-arrow-right-24.png" width="30" height="30" alt="Icon">
+                </div>
+                <div id="card_2_destination">
+                  
+                </div>
+              </div>
+              <div id="card_2_body">
+                <div id="card_2_departure_date">
+                </div>
+                <div id="card_2_username">
+                </div>
+              </div>
+              <div id="card_2_footer">
+                <div id="card_2_available_spots">
+                </div>
+                <div id="card_2_booked_spots">
+                </div>
+                <div id="card_2_gear_cost">
+                  <button id="card_2_book_btn" onclick="payment_function(event)">
+                    <div>PAY for  </div>  
+                    <div id="card_2_gear_cost_text">
+    
+                    </div>
+                    <div id="card_2_gear_logo">
+                      <img id="card_2_gear_logo_img" src="images/gear-token-white.png" width="20" height="20" alt="Icon">
+                    </div>
+                  </button>
+                </div>
+                <div id="card_2_store_on_blockchain">
+                  <button id="card_2_store_btn" onclick="blockchain_porting_trip_function(event)">
+                    <div>STORE on<br> Blockchain</div>
+                  </button>
+                </div>
+                <div id="card_2_end_trip_on_blockchain">
+                  <button id="card_2_end_trip_btn" onclick="blockchain_end_trip_function(event)">
+                    <div>END TRIP on<br> Blockchain</div>
+                  </button>
+                </div>
+                <div id="card_2_trip_payed">
+                  <div id="card_2_trip_payed_text">PAID</div>
+                </div>
+              </div>
+              <div id="card_2_wallet_ongoing_section">
+                <div id="card_2_wallet_ongoing_id">
+                </div>
+              </div>
+              <div id="card_2_travel_id_section">
+                <div id="card_2_travel_id">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="empty_box_ongoing_trips">
+          </div>
+        </div>
+        <div id="button_trips_section">
+          <div id="previous_page_trips">
+            <button id="previous_page_trips_btn">
+              <img id="previous_page_trips_img" width="30" height="30" src="images/icons8-arrow-left-24.png" alt="Icon">
+            </button>
+          </div>
+          <div id="next_page_trips">
+            <button id="next_page_trips_btn">
+              <img id="next_page_trips_img" width="30" height="30" src="images/icons8-arrow-right-24.png" alt="Icon">
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="my_offer_section">
+        <div id="my_offer_header_text">
+          <div id="my_offer_text">
+            My Gears Offer
+          </div>
+          <div id="my_offer_img_container">
+            <img id="my_offer_img" src="images/icons8-dollar-ethereum-exchange-100.png" alt="Icon">
+          </div>
+        </div>
+        <div id="my_offer_section_body">
+          <div id="my_offer_box">
+            <div id="card_0_my_offer">
+              <div id="card_0_my_offer_principal">
+                <div id="card_0_my_offer_offer">
+                  <div id="card_0_my_offer_gears_offered">
+                    <div id="card_0_my_offer_gears_offered_text">
+                      
+                    </div>
+                    <div id="card_0_my_offer_gear_img">
+                      <img src="images/gear-token.png" width="35" height="35" alt="Icon">
+                    </div>
+                  </div>
+                  <div id="card_0_my_offer_right_arrow">
+                    <img id="card_0_my_offer_right_arrow" src="images/icons8-arrow-right-24.png" width="30" height="30" alt="Icon">
+                  </div>
+                  <div id="card_0_my_offer_eth_requested">
+                    <div id="card_0_my_offer_eth_requested_text">
+                      
+                    </div>
+                    <div>
+                      <img src="images/icons8-ethereum-96.png" width="35" height="35" alt="Icon">
+                    </div>
+                  </div>
+                </div>
+                <div id="card_0_my_offer_footer">
+                  <div id="card_0_my_offer_footer_seller">
+                    
+                  </div>
+                </div>
+              </div>
+              <div id="card_0_my_offer_button_box_add_gears">
+                <button id="card_0_my_offer_btn_add_gears" onclick="add_gears_to_my_offer()">Add Gears</button>
+              </div>
+              <div id="card_0_my_offer_button_box_retrieve_gears">
+                <button id="card_0_my_offer_btn_retrieve_gears" onclick="retrieve_gears_from_my_offer()">Retrieve Gears</button>
+              </div>
+              <div id="card_0_my_offer_button_box_update_price">
+                <button id="card_0_my_offer_btn_update_price" onclick="update_eth_price()">Update ETH price</button>
+              </div>
+            </div>
+          </div>
+          <div id="empty_box_my_offer">
+          </div>
+        </div>
+      </div>
+
+      <div id="personal_info_stats_profile_header">
+        <div id="personal_info_stats_profile_header_text">
+          <div id="personal_info_stats_profile_text">
+            Statistics
+          </div>
+          <div id="personal_info_stats_profile_img_container">
+            <img id="personal_info_stats_profile_img" src="images/icons8-statistics-32.png" alt="Icon">
+          </div>
+        </div>
+        <div id="personal_info_stats_profile_header_body">
+          <div id="profile_trips_given"></div>
+          <div id="profile_trips_received"></div>
+          <div id="profile_unminted_trips_counter"></div>
+          <div id="profile_minted_gears"></div>
+          <div id="participated_trips"></div>         
+        </div>
+        <div id="personal_info_minting_button_section">
+          <button id="personal_info_minting_btn">
+            Mint Tokens
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div id="first_div_footer">
+      <h2>Drive Together, Earn Forever</h2>
+      <p>Join Remora and share rides with others.<br>Save money, reduce your carbon footprint, and earn rewards!</p>
+    </div>
+    <div id="second_column">
+      <p>&copy Leonardo Cataldi<br>&copy Alessandro Calandrelli<br>&copy Francesco Goberti<br>&copy Martino Porceddu<br>&copy Matteo Vicari</p>
+    </div>
+    <div id="footer_img">
+      <img width="100" height="100" src="images/remora-white.png" alt="#">
+    </div>
+  </footer>
+
+</body>
+</html>

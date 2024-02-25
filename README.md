@@ -21,15 +21,15 @@ Install **MySQL workbench**
 2. Log In with the user created and import the schema located inside the db directory of our project. Call it “remora_db”
 
 **Php** set up:\
-after the php installation, paste\
+after the php installation, paste
 > LoadModule php_module "C:\PHP\php8apache2_4.dll"\
 > AddHandler application/x-httpd-php .php\
-> PHPIniDir "C:\PHP"\
+> PHPIniDir "C:\PHP"
 inside the “httpd.conf” file of apache that you can find on "C:\Apache24\conf\httpd.conf"
 
 **MySql** setup:\
-after mysqli installation, uncomment the line\
-> extension=mysqli\
+after mysqli installation, uncomment the line
+> extension=mysqli
 inside the “php.ini” file of php that you can find in "C:\PHP\php.ini". If you cannot find it, simply create it by copying the “php.ini-development” file and renaming it “php.ini”.\
 
 Once the project has been downloaded, the password inside the “config.php” file in the “php_scripts” folder, has to be changed with the one that has been used during the MySql installer phase.
